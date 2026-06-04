@@ -74,4 +74,4 @@ chapters/
 assets/
 images/
 diagrams/
-pdf/git status
+pdf/
