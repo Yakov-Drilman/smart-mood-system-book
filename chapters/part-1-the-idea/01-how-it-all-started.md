@@ -1,7 +1,7 @@
 ---
 layout: default
 title: פרק 1 - רגע שבו הכל התחיל
-hero_image: /images/chapter-01-hero.png
+hero_image: /assets/images/chapter-01-hero.png
 ---
 
 # פרק 1
