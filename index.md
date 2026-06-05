@@ -3,6 +3,7 @@ layout: default
 title: Smart Mood System
 ---
 
+<div class=home-hero>
 <div class="hero">
   <h1>📘 Smart Mood System</h1>
 
@@ -16,4 +17,5 @@ title: Smart Mood System
     👉 Start reading from the sidebar<br/>
     👉 Or begin here: Chapter 1
   </p>
+</div>
 </div>
