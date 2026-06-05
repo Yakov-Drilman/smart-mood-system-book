@@ -90,7 +90,7 @@ code {
   align-items: center;
   text-align: center;
 
-  max-height: 100vh;
+  min-height: 100vh;
 
   background-image: url("../images/home-hero.png");
   background-size: cover;
@@ -99,6 +99,7 @@ code {
 
   position: relative;
   color: white;
+  padding: 0;
 }
 
 /* overlay כהה */
@@ -132,4 +133,11 @@ code {
   font-size: 18px;
   max-width: 600px;
   line-height: 1.6;
+}
+
+.chapter-hero {
+  height: 320px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
