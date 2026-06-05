@@ -1,112 +1,130 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="he" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ page.title }}</title>
 
-  <title>{{ page.title }}</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        display: flex;
+        min-height: 100vh;
+        background: #f9f9fb;
+      }
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      display: flex;
-      min-height: 100vh;
-      background: #f9f9fb;
-    }
+      /* Sidebar */
+      .sidebar {
+        width: 260px;
+        background: #111827;
+        color: white;
+        padding: 20px;
+        position: fixed;
+        height: 100vh;
+        overflow-y: auto;
+      }
 
-    /* Sidebar */
-    .sidebar {
-      width: 260px;
-      background: #111827;
-      color: white;
-      padding: 20px;
-      position: fixed;
-      height: 100vh;
-      overflow-y: auto;
-    }
+      .sidebar h2 {
+        font-size: 18px;
+        margin-bottom: 15px;
+      }
 
-    .sidebar h2 {
-      font-size: 18px;
-      margin-bottom: 15px;
-    }
+      .sidebar a {
+        display: block;
+        color: #cbd5e1;
+        text-decoration: none;
+        margin: 8px 0;
+        font-size: 14px;
+      }
 
-    .sidebar a {
-      display: block;
-      color: #cbd5e1;
-      text-decoration: none;
-      margin: 8px 0;
-      font-size: 14px;
-    }
+      .sidebar a:hover {
+        color: white;
+      }
 
-    .sidebar a:hover {
-      color: white;
-    }
+      /* Main content */
+      .content {
+        margin-right: 260px;
+        padding: 40px;
+        max-width: 900px;
+      }
 
-    /* Main content */
-    .content {
-      margin-right: 260px;
-      padding: 40px;
-      max-width: 900px;
-    }
+      h1,
+      h2,
+      h3 {
+        color: #111827;
+      }
 
-    h1, h2, h3 {
-      color: #111827;
-    }
+      pre {
+        background: #eee;
+        padding: 15px;
+        overflow-x: auto;
+      }
 
-    pre {
-      background: #eee;
-      padding: 15px;
-      overflow-x: auto;
-    }
+      code {
+        background: #eee;
+        padding: 2px 4px;
+      }
 
-    code {
-      background: #eee;
-      padding: 2px 4px;
-    }
+      /* Hero style for index */
+      .hero {
+        padding: 60px 0;
+      }
 
-    /* Hero style for index */
-    .hero {
-      padding: 60px 0;
-    }
+      .hero h1 {
+        font-size: 40px;
+        margin-bottom: 10px;
+      }
 
-    .hero h1 {
-      font-size: 40px;
-      margin-bottom: 10px;
-    }
+      .hero p {
+        font-size: 18px;
+        color: #555;
+      }
+    </style>
+  </head>
 
-    .hero p {
-      font-size: 18px;
-      color: #555;
-    }
-  </style>
-</head>
+  <body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h2>📘 תוכן העניינים</h2>
 
-<body>
+      <strong>Part 1</strong>
+      <a
+        href="/smart-mood-system-book/chapters/part-1-the-idea/01-how-it-all-started.html"
+        >1. How it started</a
+      >
+      <a
+        href="/smart-mood-system-book/chapters/part-1-the-idea/02-the-problem-no-one-solved.html"
+        >2. The problem</a
+      >
+      <a
+        href="/smart-mood-system-book/chapters/part-1-the-idea/03-turning-a-feeling-into-a-system.html"
+        >3. System idea</a
+      >
 
-  <!-- Sidebar -->
-  <div class="sidebar">
-    <h2>📘 תוכן העניינים</h2>
+      <strong>Part 2</strong>
+      <a
+        href="/smart-mood-system-book/chapters/part-2-system-design/04-breaking-the-problem-into-layers.html"
+        >4. Layers</a
+      >
+      <a
+        href="/smart-mood-system-book/chapters/part-2-system-design/05-why-architecture-matters.html"
+        >5. Architecture</a
+      >
 
-    <strong>Part 1</strong>
-    <a href="/smart-mood-system-book/chapters/part-1-the-idea/01-how-it-all-started.html">1. How it started</a>
-    <a href="/smart-mood-system-book/chapters/part-1-the-idea/02-the-problem-no-one-solved.html">2. The problem</a>
-    <a href="/smart-mood-system-book/chapters/part-1-the-idea/03-turning-a-feeling-into-a-system.html">3. System idea</a>
+      <strong>Backend</strong>
+      <a
+        href="/smart-mood-system-book/chapters/part-3-backend/08-the-first-api.html"
+        >8. API</a
+      >
+      <a
+        href="/smart-mood-system-book/chapters/part-3-backend/09-crud-as-the-core-engine.html"
+        >9. CRUD</a
+      >
+    </div>
 
-    <strong>Part 2</strong>
-    <a href="/smart-mood-system-book/chapters/part-2-system-design/04-breaking-the-problem-into-layers.html">4. Layers</a>
-    <a href="/smart-mood-system-book/chapters/part-2-system-design/05-why-architecture-matters.html">5. Architecture</a>
-
-    <strong>Backend</strong>
-    <a href="/smart-mood-system-book/chapters/part-3-backend/08-the-first-api.html">8. API</a>
-    <a href="/smart-mood-system-book/chapters/part-3-backend/09-crud-as-the-core-engine.html">9. CRUD</a>
-  </div>
-
-  <!-- Content -->
-  <div class="content">
-    {{ content }}
-  </div>
-
-</body>
+    <!-- Content -->
+    <div class="content">{{ content }}</div>
+  </body>
 </html>
