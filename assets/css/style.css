@@ -21,6 +21,7 @@ body {
   top: 0;
   bottom: 0;
   overflow-y: auto;
+  box-sizing: border-box;
 }
 
 .sidebar h2 {
@@ -44,9 +45,13 @@ body {
 /* Main content */
 .content {
   margin-right: 260px; /* 🔥 קריטי להפרדה מה-sidebar */
-  padding: 60px 80px 60px 60px; /* 🔥 נותן אוויר מהצד */
+  padding: 60px; /* 🔥 נותן אוויר מהצד */
   max-width: 900px;
   line-height: 1.7; /* קריאות טובה יותר */
+}
+
+body.home-page .content {
+  padding: 0;
 }
 
 /* Headings */

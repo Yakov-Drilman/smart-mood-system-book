@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Smart Mood System
+body_class: home-page
 ---
 
 <div class="home-page">
