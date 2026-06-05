@@ -1,77 +1,72 @@
-# Smart Mood System
+# 📘 Smart Mood System
 
-> מסע מהרעיון ועד מערכת חכמה לניתוח רגשות באמצעות תוכנה
+## 🚀 Living Project: Technical Book + SaaS Product Foundation
 
----
+Smart Mood System is an evolving development project that combines technical writing with real-world software system design.
 
-## 🧭 מה זה הפרויקט?
+It is not just a book — it is a live project demonstrating how an idea gradually evolves into a working system through:
 
-Smart Mood System הוא פרויקט שמחבר בין ספר טכנולוגי לבין בניית מערכת תוכנה מלאה.
-
-הוא מתעד תהליך מלא של בניית מערכת שמתרגמת רעיונות ורגשות למערכת דיגיטלית חכמה.
-
----
-
-## 📚 מבנה הספר
-
-### חלק א׳ — הרעיון
-- [01 - איך הכל התחיל](chapters/part-1-the-idea/01-how-it-all-started.md)
-- [02 - בעיה שאף אחד לא באמת פתר](chapters/part-1-the-idea/02-the-problem-no-one-solved.md)
-- [03 - להפוך תחושה למערכת](chapters/part-1-the-idea/03-turning-a-feeling-into-a-system.md)
+- System Design & Software Architecture
+- Full-Stack Development (Frontend + Backend)
+- Git-based versioned documentation
+- A live GitHub Pages documentation site
+- A long-term vision of an AI-powered SaaS product
 
 ---
 
-### חלק ב׳ — תכנון מערכת
-- [04 - פירוק הבעיה לשכבות](chapters/part-2-system-design/04-breaking-the-problem-into-layers.md)
-- [05 - למה צריך ארכיטקטורה](chapters/part-2-system-design/05-why-architecture-matters.md)
-- [06 - בחירת טכנולוגיות](chapters/part-2-system-design/06-choosing-technologies.md)
-- [07 - החלטות שמעצבות מערכת](chapters/part-2-system-design/07-decisions-that-shape-a-system.md)
+## 🌐 Live Book (GitHub Pages)
+
+👉 Read the book here:
+https://yakov-drilman.github.io/smart-mood-system-book/
 
 ---
 
-### חלק ג׳ — Backend
-- [08 - ה-API הראשון](chapters/part-3-backend/08-the-first-api.md)
-- [09 - CRUD כמנוע מרכזי](chapters/part-3-backend/09-crud-as-the-core-engine.md)
-- [10 - חיבור למסד נתונים](chapters/part-3-backend/10-database-integration.md)
-- [11 - משתמשים ו-JWT](chapters/part-3-backend/11-users-and-jwt.md)
+## 📚 Language Note
+
+📌 The book itself is written in **Hebrew**.
+
+It documents the full journey from idea to system design and implementation, including:
+
+- Thinking processes
+- Architecture decisions
+- Backend & Frontend development
+- AI integration concepts
 
 ---
 
-### חלק ד׳ — Frontend
-- [12 - React כממשק חכם](chapters/part-4-frontend/12-react-as-a-smart-interface.md)
-- [13 - חיבור ל-API](chapters/part-4-frontend/13-connecting-to-the-api.md)
-- [14 - ניהול State וזרימת מידע](chapters/part-4-frontend/14-state-management-and-data-flow.md)
+## 🧠 What Makes This Project Unique?
+
+Unlike a traditional book or PDF document, this is a living system:
+
+- Each chapter is version-controlled using Git
+- Every change is tracked via commits
+- The content is continuously evolving
+- The documentation is deployed as a live website via GitHub Pages
+- The book is part of an actual system being built in parallel
 
 ---
 
-### חלק ה׳ — AI
-- [15 - למה בכלל AI](chapters/part-5-ai/15-why-ai.md)
-- [16 - חיבור ל-AI API](chapters/part-5-ai/16-connecting-to-an-ai-api.md)
-- [17 - הפיכת טקסט לתובנות](chapters/part-5-ai/17-turning-text-into-insights.md)
+## 🏗️ Future Direction
+
+The project is gradually evolving into a full SaaS product:
+
+- Emotional tracking system
+- AI-based insights engine
+- Personal analytics dashboard
+- User-centered mental modeling system
 
 ---
 
-### חלק ו׳ — מערכת שלמה
-- [18 - איך הכל מתחבר](chapters/part-6-complete-system/18-how-everything-connects.md)
-- [19 - טעויות ומה למדתי](chapters/part-6-complete-system/19-mistakes-and-lessons-learned.md)
-- [20 - המערכת כארכיטקטורה חיה](chapters/part-6-complete-system/20-the-system-as-a-living-architecture.md)
+## 📌 Current Status
+
+- ✔ Live documentation website
+- ✔ Full chapter structure
+- ✔ GitHub Pages deployment active
+- ✔ Jekyll-based layout system
+- ⏳ Transitioning toward SaaS architecture
 
 ---
 
-## 🎯 מטרת הפרויקט
+## 💡 Core Idea
 
-- להראות איך רעיון הופך למערכת אמיתית
-- לתעד בניית Full Stack מקצה לקצה
-- לשלב בין קוד, ארכיטקטורה וחשיבה מערכתית
-- להדגים שימוש ב-AI כחלק ממערכת
-
----
-
-## 📂 מבנה תיקיות
-
-```text
-chapters/
-assets/
-images/
-diagrams/
-pdf/
+> This is not a book about a system — it is a book being built inside a real system.
