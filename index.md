@@ -3,65 +3,15 @@ layout: default
 title: Smart Mood System
 ---
 
-## ספר טכנולוגי על בניית מערכת שמתרגמת רגשות לתוכנה
+<div class="hero">
 
----
+# 📘 Smart Mood System
 
-## 📖 ברוכים הבאים
+## Living Technical Book → SaaS Product Journey
 
-זהו ספר שמתעד את המסע מהרעיון ועד מערכת מלאה:  
-Full Stack + System Design + AI.
+A live evolving system that turns ideas into architecture, code, and product thinking.
 
----
+👉 Start reading from the sidebar
+👉 Or begin here: Chapter 1
 
-## 🧭 התחלת קריאה
-
-👉 [📖 התחל מפרק 1](chapters/part-1-the-idea/01-how-it-all-started.md)
-
----
-
-## 📚 מבנה הספר
-
-### 📖 חלק א׳ — הרעיון
-
-- פרק 1 - איך הכל התחיל
-- פרק 2 - הבעיה
-- פרק 3 - להפוך רגש למערכת
-
-### 🏗️ חלק ב׳ — תכנון מערכת
-
-- פרק 4 - שכבות מערכת
-- פרק 5 - ארכיטקטורה
-- פרק 6 - טכנולוגיות
-- פרק 7 - החלטות מערכת
-
-### ⚙️ חלק ג׳ — Backend
-
-- פרק 8 - API ראשון
-- פרק 9 - CRUD
-- פרק 10 - Database
-- פרק 11 - JWT
-
-### 🎨 חלק ד׳ — Frontend
-
-- פרק 12 - React
-- פרק 13 - חיבור ל־API
-- פרק 14 - State
-
-### 🤖 חלק ה׳ — AI
-
-- פרק 15 - למה AI
-- פרק 16 - חיבור ל־AI
-- פרק 17 - תובנות
-
-### 🧩 חלק ו׳ — מערכת שלמה
-
-- פרק 18 - חיבור הכל
-- פרק 19 - טעויות
-- פרק 20 - מערכת חיה
-
----
-
-## 💡 טיפ
-
-כדי לקרוא בצורה הכי טובה — התחל מהפרק הראשון ותתקדם לפי הסדר.
+</div>
