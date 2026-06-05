@@ -4,19 +4,16 @@ title: Smart Mood System
 body_class: home-page
 ---
 
-<div class="home-page">
 <div class="hero">
   <h1>📘 Smart Mood System</h1>
 
-  <h2>Living Technical Book → SaaS Product Journey</h2>
+  <h2>ספר טכנולוגי חי → מסע מבניית רעיון למוצר SaaS</h2>
 
   <p>
-    A live evolving system that turns ideas into architecture, code, and product thinking.
+מערכת חיה ומתפתחת שהופכת רעיונות לארכיטקטורה, קוד וחשיבה מוצר.
   </p>
 
   <p>
-    👉 Start reading from the sidebar<br/>
-    👉 Or begin here: Chapter 1
+    👉  התחל לקרוא דרך תפריט הניווט הצדדי<br/>
   </p>
-</div>
 </div>

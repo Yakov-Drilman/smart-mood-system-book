@@ -52,6 +52,7 @@ body {
 
 body.home-page .content {
   padding: 0;
+  max-width: none;
 }
 
 /* Headings */
@@ -89,7 +90,7 @@ code {
   align-items: center;
   text-align: center;
 
-  min-height: 80vh;
+  min-height: 100vh;
 
   background-image: url("../images/home-hero.png");
   background-size: cover;
@@ -105,7 +106,7 @@ code {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.55);
+  background: rgba(0, 0, 0, 0.3);
 }
 
 /* מביא טקסט מעל overlay */
@@ -115,6 +116,13 @@ code {
 }
 
 /* טיפוגרפיה ב-hero */
+
+.hero h1,
+.hero h2,
+.hero p {
+  color: white;
+}
+
 .hero h1 {
   font-size: 40px;
   margin-bottom: 10px;
@@ -122,7 +130,6 @@ code {
 
 .hero p {
   font-size: 18px;
-  color: #555;
   max-width: 600px;
   line-height: 1.6;
 }
