@@ -18,8 +18,13 @@
   </head>
 
   <body class="{{ page.body_class }}">
+    <div class="mobile-header">
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+      <span class="mobile-title">📘 Smart Mood System</span>
+    </div>
+
     <!-- Sidebar -->
-    <div class="sidebar">
+    <div class="sidebar" id="sidebar">
       <h2>📘 תוכן העניינים</h2>
 
       <strong>הרעיון</strong>
@@ -57,6 +62,8 @@
       >
     </div>
 
+    <div class="backdrop" id="backdrop" onclick="toggleMenu()"></div>
+
     <!-- Hero -->
     {% if page.hero_image %}
     <div
@@ -67,5 +74,12 @@
 
     <!-- Content -->
     <div class="content">{{ content }}</div>
+
+    <script>
+      function toggleMenu() {
+        document.getElementById("sidebar").classList.toggle("open");
+        document.getElementById("backdrop").classList.toggle("show");
+      }
+    </script>
   </body>
 </html>

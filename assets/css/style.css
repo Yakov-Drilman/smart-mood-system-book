@@ -143,24 +143,113 @@ code {
   background-repeat: no-repeat;
 }
 
-@media (max-width: 768px) {
+.mobile-header {
+  display: none;
+}
 
-  /* ביטול Sidebar קבוע */
-  .sidebar {
-    position: relative;
-    width: 100%;
-    height: auto;
+.backdrop {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  /* =========================
+     Mobile Header
+  ========================= */
+
+  .mobile-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+
+    height: 60px;
+
+    background: #111827;
+    color: white;
+
+    padding: 0 20px;
+
+    z-index: 2000;
+    box-sizing: border-box;
   }
 
-  /* התוכן יתפוס את כל הרוחב */
+  .menu-toggle {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+  }
+
+  .mobile-title {
+    font-weight: bold;
+  }
+
+  /* =========================
+     Sidebar Drawer
+  ========================= */
+
+  .sidebar {
+    position: fixed;
+    top: 60px;
+    right: -260px;
+
+    width: 260px;
+    height: calc(100vh - 60px);
+
+    transition: right 0.3s ease;
+    z-index: 1800;
+  }
+
+  .sidebar.open {
+    right: 0;
+  }
+
+  /* =========================
+     Backdrop
+  ========================= */
+
+  .backdrop {
+    display: block;
+
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.4);
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition: opacity 0.3s ease;
+
+    z-index: 1700;
+  }
+
+  .backdrop.show {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* =========================
+     Content
+  ========================= */
+
   .content {
     margin-right: 0;
     max-width: 100%;
     padding: 20px;
+    padding-top: 80px;
     box-sizing: border-box;
   }
 
-  /* Hero */
+  /* =========================
+     Hero
+  ========================= */
+
   .hero {
     padding: 40px 20px;
     min-height: 60vh;
@@ -178,14 +267,20 @@ code {
     font-size: 16px;
   }
 
-  /* תמונות */
+  /* =========================
+     Chapter Hero
+  ========================= */
+
+  .chapter-hero {
+    height: 220px;
+  }
+
+  /* =========================
+     Images
+  ========================= */
+
   img {
     max-width: 100%;
     height: auto;
-  }
-
-  /* Hero של פרקים */
-  .chapter-hero {
-    height: 220px;
   }
 }
