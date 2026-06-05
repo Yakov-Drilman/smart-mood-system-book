@@ -1,10 +1,11 @@
 ---
 layout: default
 title: פרק 1 - רגע שבו הכל התחיל
-hero_image: /images/chapter-02-hero.png
+hero_image: /images/chapter-01-hero.png
 ---
 
-# פרק 1 
+# פרק 1
+
 # רגע שבו הכל התחיל
 
 יש רגעים בפיתוח שאתה לא כותב בהם קוד, אתה כותב בהם החלטה.  
