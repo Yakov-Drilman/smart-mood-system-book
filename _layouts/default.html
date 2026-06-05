@@ -3,85 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ '/assets/css/style.css' | relative_url }}"
+    />
 
     <title>{{ page.title }}</title>
-
-    <style>
-      body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        display: flex;
-        min-height: 100vh;
-        background: #f9f9fb;
-      }
-
-      /* Sidebar */
-      .sidebar {
-        width: 260px;
-        background: #111827;
-        color: white;
-        padding: 20px;
-        position: fixed;
-        height: 100vh;
-        overflow-y: auto;
-      }
-
-      .sidebar h2 {
-        font-size: 18px;
-        margin-bottom: 15px;
-      }
-
-      .sidebar a {
-        display: block;
-        color: #cbd5e1;
-        text-decoration: none;
-        margin: 8px 0;
-        font-size: 14px;
-      }
-
-      .sidebar a:hover {
-        color: white;
-      }
-
-      /* Main content */
-      .content {
-        margin-right: 260px;
-        padding: 40px;
-        max-width: 900px;
-      }
-
-      h1,
-      h2,
-      h3 {
-        color: #111827;
-      }
-
-      pre {
-        background: #eee;
-        padding: 15px;
-        overflow-x: auto;
-      }
-
-      code {
-        background: #eee;
-        padding: 2px 4px;
-      }
-
-      /* Hero style for index */
-      .hero {
-        padding: 60px 0;
-      }
-
-      .hero h1 {
-        font-size: 40px;
-        margin-bottom: 10px;
-      }
-
-      .hero p {
-        font-size: 18px;
-        color: #555;
-      }
-    </style>
   </head>
 
   <body>
