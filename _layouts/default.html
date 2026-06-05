@@ -75,6 +75,16 @@
     <!-- Content -->
     <div class="content">{{ content }}</div>
 
+    <!-- Floating Home Button -->
+    <a
+      class="floating-home"
+      href="{{ '/' | relative_url }}"
+      aria-label="דף הבית"
+      title="דף הבית"
+    >
+      🏠
+    </a>
+
     <script>
       function toggleMenu() {
         document.getElementById("sidebar").classList.toggle("open");
