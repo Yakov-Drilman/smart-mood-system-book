@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: "Heebo", sans-serif;
   min-height: 100vh;
   background: #f9f9fb;
   overflow-x: hidden; /* מונע קפיצות/סקרול צדדי */
@@ -90,7 +90,7 @@ code {
   align-items: center;
   text-align: center;
 
-  min-height: 100vh;
+  max-height: 100vh;
 
   background-image: url("../images/home-hero.png");
   background-size: cover;
