@@ -3,7 +3,7 @@ layout: default
 title: Smart Mood System
 ---
 
-<div class=home-hero>
+<div class="home-page">
 <div class="hero">
   <h1>📘 Smart Mood System</h1>
 
