@@ -26,23 +26,24 @@ body_class: home-page
 </section>
 
 
-<section id="about">
+<section id="about" class="about-section">
 
-<img
-src="/assets/images/profile.jpg"
-alt="יעקב דרילמן"
-class="profile-image"
+  <div class="about-content">
+    <h1>אודות</h1>
 
->
+    <h2>אני יעקב דרילמן</h2>
 
-  <h1>אודות</h1>
+    <p>
+      הפרויקט הזה נולד מתוך רצון להבין כיצד אפשר לקחת חוויה אנושית
+      מורכבת ולהפוך אותה למערכת תוכנה אמיתית.
+    </p>
+  </div>
 
-  <h2>אני יעקב דרילמן</h2>
-
-  <p>
-    הפרויקט הזה נולד מתוך רצון להבין כיצד אפשר לקחת חוויה אנושית
-    מורכבת ולהפוך אותה למערכת תוכנה אמיתית.
-  </p>
+  <img
+    src="{{ '/assets/images/profile.jpg' | relative_url }}"
+    alt="יעקב דרילמן"
+    class="profile-image"
+  >
 
 </section>
 
@@ -57,7 +58,7 @@ From Idea To System
 
 </h2>
 
-<a href="/smart-mood-system-book/chapters/part-1-the-idea/01-how-it-all-started.html" class="read-book-btn">Read The Book</a>
+<a href="{{ '/chapters/part-1-the-idea/01-how-it-all-started.html' | relative_url }}" class="read-book-btn">Read The Book</a>
 
 </section>
 
