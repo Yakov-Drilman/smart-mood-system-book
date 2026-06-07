@@ -112,14 +112,21 @@ section h2 {
 /* כפתורים */
 .read-book-btn {
   display: inline-block;
-  margin-top: 30px;
+  margin: 30px auto 0;
   padding: 14px 30px;
   background: transparent;
-  color: white;
+  color: rgb(75, 73, 73);
   text-decoration: none;
   border-radius: 10px;
-  border: solid white;
+  border-color: rgba(0, 0, 0, 0.4);
+  border-width: 1px;
   transition: 0.3s;
+  width: fit-content;
+}
+
+.hero .read-book-btn{
+  border-color: rgb(255 255 255 / 0.4);
+  color: white;
 }
 
 .read-book-btn:hover {
@@ -237,7 +244,7 @@ code {
   z-index: 2;
 }
 
-.home-page .hero section h1::after {
+section.hero h1::after {
   width: 0;
   height: 0;
 }

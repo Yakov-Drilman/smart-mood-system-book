@@ -21,7 +21,7 @@ body_class: home-page
 מערכת חיה ומתפתחת שהופכת רעיונות לארכיטקטורה, קוד וחשיבה מוצר.
   </p>
 
-<a href="#" class="read-book-btn">התחל לקרוא</a>
+<a href="{{ '/chapters/part-1-the-idea/01-how-it-all-started.html' | relative_url }}" class="read-book-btn">התחל לקרוא</a>
 
 </section>
 
