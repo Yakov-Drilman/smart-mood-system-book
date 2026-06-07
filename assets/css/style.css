@@ -118,14 +118,14 @@ section h2 {
   color: rgb(75, 73, 73);
   text-decoration: none;
   border-radius: 10px;
-  border-color: rgba(0, 0, 0, 0.4);
+  border: rgba(0, 0, 0, 0.4) solid;
   border-width: 1px;
   transition: 0.3s;
   width: fit-content;
 }
 
 .hero .read-book-btn{
-  border-color: rgb(255 255 255 / 0.4);
+  border: rgba(252, 252, 252, 0.695) solid 0.7px;
   color: white;
 }
 
