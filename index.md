@@ -8,8 +8,8 @@ body_class: home-page
 <a href="#hero">Hero</a>
   <a href="#about">About</a>
   <a href="#vision">Vision</a>
-  <a href="#book">Engineering Journey 📖</a>
-  <a href="#project">Project Build Log 💻</a>
+  <a href="#book">Engineering Journey</a>
+  <a href="#project">Project Build Log</a>
 </nav>
 
 <section class="hero" id=hero>
@@ -22,14 +22,18 @@ body_class: home-page
   </p>
 
 <a href="#" class="read-book-btn">התחל לקרוא</a>
-  
+
+</section>
+
+
 <section id="about">
 
-  <img
-    src="/assets/images/profile.png"
-    alt="יעקב דרילמן"
-    class="profile-image"
-  >
+<img
+src="/assets/images/profile.jpg"
+alt="יעקב דרילמן"
+class="profile-image"
+
+>
 
   <h1>אודות</h1>
 
@@ -50,9 +54,10 @@ body_class: home-page
 20 Chapters
 
 From Idea To System
+
 </h2>
 
-<a href="#" class="read-book-btn">Read The Book</a>
+<a href="/smart-mood-system-book/chapters/part-1-the-idea/01-how-it-all-started.html" class="read-book-btn">Read The Book</a>
 
 </section>
 
@@ -66,6 +71,7 @@ Backend
 Frontend
 Database
 Deployment
+
 </h2>
 
 <a href="#" class="read-book-btn">View Project Log</a>
@@ -74,7 +80,7 @@ Deployment
 
 <footer class="site-footer">
   <div class="footer-container">
-    <p>&copy; <span id="year"></span> Smart Mood System. כל הזכויות שמורות</p>
+    <p>&copy; <span id="year"></span> Smart Mood System</p>
   </div>
 </footer>
 
