@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ '/assets/css/style.css' | relative_url }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ '/assets/css/build-log.css' | relative_url }}"
+    />
+    <title>{{ page.title }}</title>
+  </head>
+
+  <body class="build-layout">
+    <div class="sidebar">
+      <h2>💻 Build Log</h2>
+
+      <a href="{{ '/build-log/' | relative_url }}"> Overview </a>
+
+      <strong>Project Days</strong>
+
+      <a href="#">Day 1 — Project Skeleton</a>
+      <a href="#">Day 2 — REST API</a>
+      <a href="#">Day 3 — CRUD</a>
+      <a href="#">Day 4 — Database</a>
+
+      <hr />
+
+      <a href="{{ '/' | relative_url }}"> 🏠 Home </a>
+
+      <a href="{{ '/introduction/' | relative_url }}">
+        📘 Engineering Journey
+      </a>
+    </div>
+
+    <div class="content">{{ content }}</div>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ '/assets/css/style.css' | relative_url }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ '/assets/css/journey.css' | relative_url }}"
+    />
+    <title>{{ page.title }}</title>
+  </head>
+
+  <body class="journey-layout">
+    <div class="sidebar">
+      <h2>📘 Engineering Journey</h2>
+
+      <a href="{{ '/introduction/' | relative_url }}"> Introduction </a>
+
+      <strong>Part 1 — The Idea</strong>
+
+      <a href="#">1. רגע שבו הכל התחיל</a>
+      <a href="#">2. בעיה שאף אחד לא באמת פתר</a>
+      <a href="#">3. להפוך תחושה למערכת</a>
+
+      <strong>Part 2 — System Design</strong>
+
+      <a href="#">4. פירוק הבעיה לשכבות</a>
+      <a href="#">5. למה צריך ארכיטקטורה</a>
+      <a href="#">6. בחירת טכנולוגיות</a>
+      <a href="#">7. החלטות שמעצבות מערכת</a>
+
+      <strong>Part 3 — Backend</strong>
+
+      <a href="#">8. API</a>
+      <a href="#">9. CRUD</a>
+      <a href="#">10. Database</a>
+      <a href="#">11. JWT</a>
+
+      <hr />
+
+      <a href="{{ '/' | relative_url }}"> 🏠 Home </a>
+    </div>
+
+    <div class="content">
+      {% if page.hero_image %}
+      <div
+        class="chapter-hero"
+        style="background-image:url('{{ page.hero_image | relative_url }}')"
+      ></div>
+      {% endif %} {{ content }}
+    </div>
+  </body>
+</html>
