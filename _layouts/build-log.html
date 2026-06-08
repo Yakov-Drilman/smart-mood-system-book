@@ -74,6 +74,14 @@
     <!-- Backdrop -->
     <div class="backdrop" id="backdrop" onclick="toggleMenu()"></div>
 
+    <!-- Hero -->
+    {% if page.hero_image %}
+    <div
+      class="chapter-hero"
+      style="background-image: url('{{ page.hero_image | relative_url }}')"
+    ></div>
+    {% endif %}
+
     <!-- Content -->
     <div class="content">{{ content }}</div>
 
