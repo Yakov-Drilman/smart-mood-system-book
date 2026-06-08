@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: journey
 title: פרק 6 - בחירת טכנולוגיות (Node / ASP.NET Core)
 hero_image: /assets/images/chapter-06-hero.png
 ---

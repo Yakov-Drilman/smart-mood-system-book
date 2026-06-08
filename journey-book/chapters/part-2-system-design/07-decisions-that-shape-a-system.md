@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: journey
 title: פרק 7 - החלטות שמעצבות מערכת
 hero_image: /assets/images/chapter-07-hero.png
 ---

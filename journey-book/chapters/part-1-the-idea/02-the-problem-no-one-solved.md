@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: journey
 title: פרק 2 - בעיה שאף אחד לא באמת פתר
 hero_image: /assets/images/chapter-02-hero.png
 ---

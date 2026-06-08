@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: journey
 title: פרק 3 - להפוך תחושה למערכת
 hero_image: /assets/images/chapter-03-hero.png
 ---

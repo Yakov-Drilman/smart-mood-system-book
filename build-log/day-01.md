@@ -1,3 +1,9 @@
+---
+layout: build
+title: Day 1 – Backend Setup
+hero_image: /assets/images/chapter-01-hero.png
+---
+
 # Day 1 – Backend Setup
 
 ## 🚀 Backend Foundation

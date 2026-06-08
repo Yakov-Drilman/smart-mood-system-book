@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: journey
 title: פרק 5 - למה צריך ארכיטקטורה
 hero_image: /assets/images/chapter-05-hero.png
 ---

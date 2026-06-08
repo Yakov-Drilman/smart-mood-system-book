@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: journey
 title: פרק 4 - פירוק המערכת
 hero_image: /assets/images/chapter-04-hero.png
 ---

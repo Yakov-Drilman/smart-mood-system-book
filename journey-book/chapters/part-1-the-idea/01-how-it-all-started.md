@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: journey
 title: פרק 1 - רגע שבו הכל התחיל
 hero_image: /assets/images/chapter-01-hero.png
 ---
