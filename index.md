@@ -1,85 +1,168 @@
 ---
-layout: default
+layout: home
 title: Smart Mood System
-body_class: home-page
 ---
 
 <nav>
-<a href="#hero">התחלה</a>
+  <a href="#hero">התחלה</a>
   <a href="#about">אודות</a>
   <a href="#vision">חזון</a>
-  <a href="#book">מסע הנדסי</a>
-  <a href="#project">יומן פרוייקט</a>
+  <a href="#book">הספר</a>
+  <a href="#project">יומן הפיתוח</a>
+  <a href="{{ site.github.repository_url }}">GitHub</a>
 </nav>
 
-<section class="hero" id=hero>
+<section class="hero" id="hero">
+
   <h1>Smart Mood System</h1>
 
-  <h2>מסע הנדסי חי, מסע מבניית רעיון למוצר SaaS</h2>
+  <h2>
+    מסע הנדסי חי — מרעיון, דרך ארכיטקטורה וקוד, אל מוצר SaaS אמיתי
+  </h2>
 
   <p>
-מערכת חיה ומתפתחת שהופכת רעיונות לארכיטקטורה, קוד וחשיבה מוצר.
+    מערכת חיה ומתפתחת המתעדת כיצד רעיון הופך בהדרגה לארכיטקטורה,
+    לקוד ולמוצר אמיתי.
   </p>
 
-<a href="{{ '/journey-book/chapters/part-1-the-idea/01-how-it-all-started.html' | relative_url }}" class="read-book-btn">התחל לקרוא</a>
+<a
+href="{{ '/journey-book/chapters/part-1-the-idea/01-how-it-all-started.html' | relative_url }}"
+class="read-book-btn"
+
+>
+
+    התחל לקרוא
+
+  </a>
 
 </section>
 
 <section id="about" class="about-section">
 
   <div class="about-content">
+
     <h1>אודות</h1>
+
     <h2>אני יעקב דרילמן</h2>
+
     <p>
-      הפרויקט הזה נולד מתוך רצון לחקור כיצד ניתן לקחת חוויה אנושית פנימית, רגשות, מחשבות ודפוסים, להפוך אותה למערכת תוכנה מדידה ומבוססת נתונים.
-הפרויקט משמש גם כמסע למידה וגם כבסיס למוצר אמיתי.
-</p>
+      הפרויקט הזה נולד מתוך רצון לחקור כיצד ניתן לקחת חוויה אנושית
+      פנימית — רגשות, מחשבות ודפוסים — ולהפוך אותה למערכת תוכנה
+      מדידה ומבוססת נתונים.
+    </p>
+
+    <p>
+      Smart Mood System משלב בין מסע למידה אישי, תיעוד הנדסי חי
+      ופיתוח של מוצר אמיתי.
+    </p>
+
+    <p>
+      האתר עצמו משמש גם כספר דיגיטלי, גם כתיעוד ארכיטקטוני וגם
+      כיומן פיתוח של מערכת הנבנית בזמן אמת.
+    </p>
 
   </div>
 
 <img
-src="{{ '/assets/images/profile.jpg' | relative_url }}"
-alt="יעקב דרילמן"
-class="profile-image"
-
->
+    src="{{ '/assets/images/profile.jpg' | relative_url }}"
+    alt="יעקב דרילמן"
+    class="profile-image"
+  />
 
 </section>
 
 <section id="vision">
-<h1>חזון</h1>
-החזון של Smart Mood System הוא לחבר בין עולם הרגש האנושי לבין עולם ההנדסה.
 
-באמצעות שילוב של יומן רגשות, ניתוח מגמות, והמלצות מבוססות נתונים, המערכת שואפת להפוך מודעות עצמית לתהליך מדיד ומשופר לאורך זמן.
+  <h1>החזון</h1>
+
+  <h2>
+    Smart Mood System שואפת לחבר בין עולם הרגש האנושי לבין עולם
+    ההנדסה והתוכנה.
+  </h2>
+
+  <p>
+    באמצעות שילוב של יומן רגשות, ניתוח מגמות, תהליכי קבלת החלטות
+    והמלצות מבוססות נתונים, המערכת שואפת להפוך מודעות עצמית
+    לתהליך מדיד, מתועד ומשתפר לאורך זמן.
+  </p>
+
+  <p>
+    מעבר למוצר עצמו, הפרויקט מדגים כיצד רעיון עובר מסע מלא של
+    אפיון, ארכיטקטורה, פיתוח, תיעוד והפיכה למערכת אמיתית.
+  </p>
 
 </section>
 
 <section id="book">
-<h1>הספר</h1>
-<h2>
-הספר "Engineering Journey" מתעד את תהליך הבנייה של המערכת מהשלב הראשון ועד למוצר שלם.
 
-כל פרק מציג החלטות ארכיטקטוניות, אתגרים טכנולוגיים ותובנות שנולדו תוך כדי פיתוח אמיתי.
+  <h1>Engineering Journey</h1>
 
-</h2>
+  <h2>הספר המתעד את המסע</h2>
 
-<a href="{{ '/journey-book/chapters/part-1-the-idea/01-how-it-all-started.html' | relative_url }}" class="read-book-btn">קרא את הספר</a>
+  <p>
+    הספר מתעד את תהליך החשיבה שמאחורי המערכת.
+  </p>
+
+  <p>
+    החל מהרעיון הראשוני, דרך פירוק הבעיה, קבלת החלטות
+    ארכיטקטוניות, בחירת טכנולוגיות והבנת האתגרים שבבניית
+    מערכת מורכבת.
+  </p>
+
+  <p>
+    זהו הצד הרעיוני של המסע — המקום שבו נולדות ההחלטות
+    שמעצבות את המוצר.
+  </p>
+
+<a
+href="{{ '/journey-book/chapters/part-1-the-idea/01-how-it-all-started.html' | relative_url }}"
+class="read-book-btn"
+
+>
+
+    קרא את הספר
+
+  </a>
 
 </section>
 
 <section id="project">
-<h1>פרוייקט</h1>
 
-<h2>
-Project Build Log הוא יומן הפיתוח הטכני של המערכת.
+  <h1>Project Build Log</h1>
 
-כאן מתועדים שלבי הפיתוח בפועל: Backend, Frontend, בסיסי נתונים, API, ארכיטקטורה ופריסה לענן.
+  <h2>יומן הפיתוח של המערכת</h2>
 
-זה החלק הטכני של המסע, בלי פילטרים, רק בנייה אמיתית.
+  <p>
+    יומן הפיתוח מתעד את הבנייה בפועל של Smart Mood System.
+  </p>
 
-</h2>
+  <p>
+    כאן ניתן לעקוב אחר שלבי הפיתוח היום־יומיים:
+  </p>
 
-<a href="#" class="read-book-btn">קרא את יומן הפרויקט</a>
+  <ul>
+    <li>Backend</li>
+    <li>Frontend</li>
+    <li>API</li>
+    <li>בסיסי נתונים</li>
+    <li>ארכיטקטורה</li>
+    <li>Git ו־GitHub</li>
+    <li>פריסה לענן</li>
+  </ul>
+
+  <p>
+    זהו הצד המעשי של המסע — המקום שבו הרעיונות הופכים לקוד.
+  </p>
+
+<a
+href="{{ '/build-log/' | relative_url }}"
+class="read-book-btn"
+
+>
+
+    קרא את יומן הפיתוח
+
+  </a>
 
 </section>
 
@@ -90,5 +173,6 @@ Project Build Log הוא יומן הפיתוח הטכני של המערכת.
 </footer>
 
 <script>
-  document.getElementById("year").textContent = new Date().getFullYear();
+  document.getElementById("year").textContent =
+    new Date().getFullYear();
 </script>

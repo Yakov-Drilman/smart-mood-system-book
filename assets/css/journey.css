@@ -1,0 +1,65 @@
+.sidebar {
+  width: 260px;
+  background: #111827;
+  color: white;
+
+  padding: 20px;
+
+  position: fixed;
+  top: 0;
+  bottom: 0;
+
+  overflow-y: auto;
+}
+
+.sidebar h2 {
+  color: white;
+  margin-bottom: 20px;
+}
+
+.sidebar a {
+  display: block;
+  color: #cbd5e1;
+  text-decoration: none;
+  margin: 8px 0;
+}
+
+.sidebar a:hover {
+  color: white;
+}
+
+.content {
+  margin-right: 260px;
+  padding: 60px;
+}
+
+.chapter-hero {
+  height: 320px;
+  background-size: cover;
+  background-position: center;
+}
+
+@media (max-width:768px){
+
+  .sidebar {
+    top: 60px;
+    right: -260px;
+
+    width: 260px;
+    height: calc(100vh - 60px);
+
+    transition: .3s;
+  }
+
+  .sidebar.open {
+    right: 0;
+  }
+
+  .content {
+    margin-right: 0;
+  }
+
+  .chapter-hero {
+    height: 220px;
+  }
+}
