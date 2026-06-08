@@ -1,15 +1,15 @@
-# 📘 Day 2 – Backend Architecture & Full CRUD
+# Day 2 – Backend Architecture & Full CRUD
 
 ## 🚀 From Simple Server → Real Architecture
 
-ביום הזה התחלנו להפוך את ה־backend שלנו ממבנה פשוט של קובץ אחד  
+ביום הזה התחלנו להפוך את ה-backend שלנו ממבנה פשוט של קובץ אחד  
 למערכת מודולרית עם הפרדה בין שכבות (Architecture בסיסי).
 
 ---
 
 ## 🎯 מטרות היום
 
-- הפרדת הקוד ל־routes
+- הפרדת הקוד ל-routes
 - יצירת מבנה backend מקצועי
 - בניית REST API מסודר
 - הוספת POST request (Create)
@@ -32,6 +32,7 @@ backend/
 │
 └── server.
 ```
+
 ---
 
 ## 🧠 למה זה חשוב?
@@ -40,23 +41,39 @@ backend/
 
 ❌ לפני:
 
-הכל ב־server.js
+הכל ב-server.js
 
 ✔ אחרי:
 
 - server.js → ניהול אפליקציה
-routes → ניהול endpoints
-הפרדה בין אחריותים (Separation of Concerns)
-קוד שניתן להרחבה ותחזוקה
-🌐 Routes – Moods
+- routes → ניהול endpoints
+- הפרדה בין אחריותים (Separation of Concerns)
+- קוד שניתן להרחבה ותחזוקה
+
+---
+
+## 🌐 Routes – Moods
+
 📁 routes/moods.js
+
+```javascript
 const express = require("express");
 const router = express.Router();
-📥 GET – קבלת נתונים
+```
+
+## 📥 GET – קבלת נתונים
+
+```javascript
 router.get("/", (req, res) => {
   res.json(moods);
 });
-📊 דוגמה לתגובה:
+```
+
+---
+
+## 📊 דוגמה לתגובה:
+
+```json
 [
   {
     "id": 1,
@@ -64,58 +81,67 @@ router.get("/", (req, res) => {
     "note": "Good day"
   }
 ]
+```
 
 ---
 
 ## ➕ POST – הוספת Mood חדש
 
+```javascript
 router.post("/", (req, res) => {
   const newMood = {
     id: moods.length + 1,
     mood: req.body.mood,
-    note: req.body.note
+    note: req.body.note,
   };
 
   moods.push(newMood);
 
   res.json({
     message: "Mood added successfully",
-    mood: newMood
+    mood: newMood,
   });
 });
+```
 
 ---
 
 ## 📥 דוגמה לבקשה:
 
-
+```javascript
 {
   "mood": "excited",
   "note": "Learning backend"
 }
-🗑️ DELETE – מחיקת Mood
+```
+
+## 🗑️ DELETE – מחיקת Mood
+
+```javascript
 router.delete("/:id", (req, res) => {
   const id = parseInt(req.params.id);
 
-  const moodIndex = moods.findIndex(m => m.id === id);
+  const moodIndex = moods.findIndex((m) => m.id === id);
 
   if (moodIndex === -1) {
     return res.status(404).json({
-      message: "Mood not found"
+      message: "Mood not found",
     });
   }
 
   moods.splice(moodIndex, 1);
 
   res.json({
-    message: "Mood deleted successfully"
+    message: "Mood deleted successfully",
   });
 });
+```
 
 ---
 
 ## 🔁 server.js – חיבור הכל
 
+```javascript
 const express = require("express");
 const cors = require("cors");
 
@@ -128,7 +154,7 @@ app.use(express.json());
 
 app.get("/", (req, res) => {
   res.json({
-    message: "Smart Mood API is running"
+    message: "Smart Mood API is running",
   });
 });
 
@@ -139,40 +165,53 @@ const PORT = 3001;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+```
 
 ---
 
-## 🧪 איך בודקים את ה־API
+## 🧪 איך בודקים את ה-API
 
-GET
+## GET
+
+```text
 http://localhost:3001/moods
+```
 
 ---
 
 ## POST
+
+```text
 POST http://localhost:3001/moods
+```
 
 Body:
 
+```json
 {
   "mood": "tired",
   "note": "Long day"
 }
+```
 
 ---
 
 ## DELETE
+
+```text
 DELETE http://localhost:3001/moods/1
+```
 
 ---
 
 ## 🧠 מה למדנו היום
-- מה זה Architecture בסיסי ב־Backend
-הפרדה ל־routes
-עבודה עם REST API אמיתי
-POST request ו־req.body
-DELETE request ו־route params
-CRUD בסיסי (Create, Read, Delete)
+
+- מה זה Architecture בסיסי ב-Backend
+- הפרדה ל־routes
+- עבודה עם REST API אמיתי
+- POST request ו־req.body
+- DELETE request ו־route params
+- CRUD בסיסי (Create, Read, Delete)
 
 ---
 

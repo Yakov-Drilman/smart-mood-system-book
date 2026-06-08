@@ -9,6 +9,7 @@
 ---
 
 ## 🎯 מטרות היום
+
 - יצירת פרויקט Node.js
 - הקמת שרת Express בסיסי
 - יצירת endpoints ראשונים
@@ -19,6 +20,7 @@
 ---
 
 ## 🏗️ מה בנינו בפועל
+
 ### 📁 מבנה הפרויקט
 
 ```plaintext
@@ -30,24 +32,30 @@ smart-mood-system/
 │
 └── frontend/ (מוכן להמשך)
 ```
+
 ---
 
 ## ⚙️ שרת Node.js (Express)
 
 השרת מאזין לפורט 3001 ומספק API בסיסי.
 
-🌐 Endpoints
+## 🌐 Endpoints
+
 GET /
 
 מחזיר סטטוס שהשרת פעיל:
 
+```text
 {
   "message": "Smart Mood API is running"
 }
+```
+
 GET /moods
 
 מחזיר נתוני דוגמה של מצבי רוח:
 
+```json
 [
   {
     "id": 1,
@@ -60,6 +68,7 @@ GET /moods
     "note": "Too much work"
   }
 ]
+```
 
 ---
 
@@ -67,27 +76,32 @@ GET /moods
 
 בתוך תיקיית backend:
 
+```json
 npm install
 npm run dev
+```
 
 השרת ירוץ בכתובת:
 
 http://localhost:3001
-🧠 מה למדנו היום
-איך מקימים backend מאפס
-עבודה עם Express
-יצירת REST API בסיסי
-בדיקת endpoints בדפדפן
-חיבור פרויקט ל־GitHub
-שימוש ב־Git tag כ־snapshot של יום
-🏷️ Git Snapshot
-day-01
+
+---
+
+## 🧠 מה למדנו היום
+
+- איך מקימים backend מאפס
+- עבודה עם Express
+- יצירת REST API בסיסי
+- בדיקת endpoints בדפדפן
+- חיבור פרויקט ל-GitHub
+- שימוש ב-Git tag כ-snapshot של יום🏷️ Git Snapshot day-01
 
 ## 🔗 קישור לקוד:
 
 [![Day 1](https://img.shields.io/badge/Code-Day_01-blue)](https://github.com/Yakov-Drilman/smart-mood-system/tree/day-01)
 https://github.com/Yakov-Drilman/smart-mood-system/tree/day-01
-📌 מצב הפרויקט בסוף היום
+
+## 📌 מצב הפרויקט בסוף היום
 
 ✔ Backend עובד
 ✔ API ראשון פעיל
