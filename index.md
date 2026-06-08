@@ -21,7 +21,7 @@ body_class: home-page
 מערכת חיה ומתפתחת שהופכת רעיונות לארכיטקטורה, קוד וחשיבה מוצר.
   </p>
 
-<a href="{{ '/chapters/part-1-the-idea/01-how-it-all-started.html' | relative_url }}" class="read-book-btn">התחל לקרוא</a>
+<a href="{{ '/journey-book/chapters/part-1-the-idea/01-how-it-all-started.html' | relative_url }}" class="read-book-btn">התחל לקרוא</a>
 
 </section>
 
@@ -51,6 +51,7 @@ class="profile-image"
 החזון של Smart Mood System הוא לחבר בין עולם הרגש האנושי לבין עולם ההנדסה.
 
 באמצעות שילוב של יומן רגשות, ניתוח מגמות, והמלצות מבוססות נתונים, המערכת שואפת להפוך מודעות עצמית לתהליך מדיד ומשופר לאורך זמן.
+
 </section>
 
 <section id="book">
@@ -62,7 +63,7 @@ class="profile-image"
 
 </h2>
 
-<a href="{{ '/chapters/part-1-the-idea/01-how-it-all-started.html' | relative_url }}" class="read-book-btn">קרא את הספר</a>
+<a href="{{ '/journey-book/chapters/part-1-the-idea/01-how-it-all-started.html' | relative_url }}" class="read-book-btn">קרא את הספר</a>
 
 </section>
 
@@ -75,6 +76,7 @@ Project Build Log הוא יומן הפיתוח הטכני של המערכת.
 כאן מתועדים שלבי הפיתוח בפועל: Backend, Frontend, בסיסי נתונים, API, ארכיטקטורה ופריסה לענן.
 
 זה החלק הטכני של המסע, בלי פילטרים, רק בנייה אמיתית.
+
 </h2>
 
 <a href="#" class="read-book-btn">קרא את יומן הפרויקט</a>
