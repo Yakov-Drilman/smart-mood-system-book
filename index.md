@@ -155,7 +155,7 @@ class="read-book-btn"
   </p>
 
 <a
-href="{{ '/build-log/' | relative_url }}"
+href="{{ '/build-log/day-01.html' | relative_url }}"
 class="read-book-btn"
 
 >

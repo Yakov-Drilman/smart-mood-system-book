@@ -4,116 +4,95 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-```
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
 
-<link
-  href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700&display=swap"
-  rel="stylesheet"
-/>
+    <link
+      rel="stylesheet"
+      href="{{ '/assets/css/style.css' | relative_url }}"
+    />
 
-<link
-  rel="stylesheet"
-  href="{{ '/assets/css/style.css' | relative_url }}"
-/>
+    <link
+      rel="stylesheet"
+      href="{{ '/assets/css/build-log.css' | relative_url }}"
+    />
 
-<link
-  rel="stylesheet"
-  href="{{ '/assets/css/build-log.css' | relative_url }}"
-/>
-
-<title>{{ page.title }}</title>
-```
-
+    <title>{{ page.title }}</title>
   </head>
 
   <body class="build-layout">
+    <!-- Mobile Header -->
+    <div class="mobile-header">
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+      <span class="mobile-title">💻 Build Log</span>
+    </div>
 
-```
-<!-- Mobile Header -->
-<div class="mobile-header">
-  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-  <span class="mobile-title">💻 Build Log</span>
-</div>
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+      <h2>💻 Build Log</h2>
 
-<!-- Sidebar -->
-<div class="sidebar" id="sidebar">
+      <a href="/smart-mood-system-book/build-log/"> 📋 Overview </a>
 
-  <h2>💻 Build Log</h2>
+      <a href="/smart-mood-system-book/build-log/overview.html">
+        Project Overview
+      </a>
 
-  <a href="/smart-mood-system-book/build-log/">
-    📋 Overview
-  </a>
+      <strong>Project Days</strong>
 
-  <a href="/smart-mood-system-book/build-log/overview.html">
-    Project Overview
-  </a>
+      <a href="/smart-mood-system-book/build-log/day-01.html">
+        Day 1 — Project Skeleton
+      </a>
 
-  <strong>Project Days</strong>
+      <a href="/smart-mood-system-book/build-log/day-02.html">
+        Day 2 — REST API
+      </a>
 
-  <a href="/smart-mood-system-book/build-log/day-01.html">
-    Day 1 — Project Skeleton
-  </a>
+      <a href="/smart-mood-system-book/build-log/day-03.html"> Day 3 — CRUD </a>
 
-  <a href="/smart-mood-system-book/build-log/day-02.html">
-    Day 2 — REST API
-  </a>
+      <a href="/smart-mood-system-book/build-log/day-04.html">
+        Day 4 — Database
+      </a>
 
-  <a href="/smart-mood-system-book/build-log/day-03.html">
-    Day 3 — CRUD
-  </a>
+      <a href="/smart-mood-system-book/build-log/day-05.html">
+        Day 5 — Authentication
+      </a>
 
-  <a href="/smart-mood-system-book/build-log/day-04.html">
-    Day 4 — Database
-  </a>
+      <hr />
 
-  <a href="/smart-mood-system-book/build-log/day-05.html">
-    Day 5 — Authentication
-  </a>
+      <a href="{{ '/' | relative_url }}"> 🏠 דף הבית </a>
 
-  <hr />
+      <a href="/smart-mood-system-book/journey-book/">
+        📘 Engineering Journey
+      </a>
+    </div>
 
-  <a href="{{ '/' | relative_url }}">
-    🏠 דף הבית
-  </a>
+    <!-- Backdrop -->
+    <div class="backdrop" id="backdrop" onclick="toggleMenu()"></div>
 
-  <a href="/smart-mood-system-book/journey-book/">
-    📘 Engineering Journey
-  </a>
+    <!-- Content -->
+    <div class="content">{{ content }}</div>
 
-</div>
+    <!-- Floating Home Button -->
+    <a
+      class="floating-home"
+      href="{{ '/' | relative_url }}"
+      aria-label="דף הבית"
+      title="דף הבית"
+    >
+      🏠
+    </a>
 
-<!-- Backdrop -->
-<div
-  class="backdrop"
-  id="backdrop"
-  onclick="toggleMenu()"
-></div>
-
-<!-- Content -->
-<div class="content">
-  {{ content }}
-</div>
-
-<!-- Floating Home Button -->
-<a
-  class="floating-home"
-  href="{{ '/' | relative_url }}"
-  aria-label="דף הבית"
-  title="דף הבית"
->
-  🏠
-</a>
-
-<script>
-  function toggleMenu() {
-    document.getElementById("sidebar").classList.toggle("open");
-    document.getElementById("backdrop").classList.toggle("show");
-  }
-</script>
-```
-
+    <script>
+      function toggleMenu() {
+        document.getElementById("sidebar").classList.toggle("open");
+        document.getElementById("backdrop").classList.toggle("show");
+      }
+    </script>
+    ```
   </body>
 </html>
