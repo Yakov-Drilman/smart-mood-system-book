@@ -1,6 +1,6 @@
 # 📘 Smart Mood System
 
-![Vision Diagram](assets/images/smart-mood-system-global vision.png)
+![Vision Diagram](assets/images/smart-mood-system-global-vision.png)
 
 ## 🚀 A Living Engineering Journey
 
