@@ -1,35 +1,29 @@
+/* פריסה גמישה לכל העמוד */
+.main-wrapper {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* התפריט הצדי - דסקטופ */
 .sidebar {
   width: 260px;
   background: #111827;
   color: white;
-
   padding: 20px;
-
-  position: fixed;
+  flex-shrink: 0;
+  height: 100vh;
+  position: sticky;
   top: 0;
-  bottom: 0;
-
   overflow-y: auto;
 }
 
-.sidebar h2 {
-  color: white;
-  margin-bottom: 20px;
-}
-
-.sidebar a {
-  display: block;
-  color: #cbd5e1;
-  text-decoration: none;
-  margin: 8px 0;
-}
-
-.sidebar a:hover {
-  color: white;
+/* התוכן הראשי - תופס את כל השטח שנותר */
+.page-content {
+  flex-grow: 1;
+  width: calc(100% - 260px);
 }
 
 .content {
-  margin-right: 260px;
   padding: 60px;
 }
 
@@ -37,28 +31,33 @@
   height: 320px;
   background-size: cover;
   background-position: center;
+  width: 100%;
 }
 
-@media (max-width:768px){
-
+/* התאמות למובייל */
+@media (max-width: 768px) {
+  .main-wrapper {
+    flex-direction: column;
+  }
+  
   .sidebar {
-    top: 60px;
+    position: fixed;
     right: -260px;
-
-    width: 260px;
-    height: calc(100vh - 60px);
-
+    height: 100vh;
+    z-index: 1000;
     transition: .3s;
+    top: 60px; /* גובה ההדר במובייל */
   }
 
   .sidebar.open {
     right: 0;
   }
-
-  .content {
+  
+  .page-content {
     margin-right: 0;
+    width: 100%;
   }
-
+  
   .chapter-hero {
     height: 220px;
   }
