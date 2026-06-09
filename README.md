@@ -1,6 +1,6 @@
 # 📘 Smart Mood System
 
-![Vision Diagram](assets/images/smart-mood-system-global vision)
+![Vision Diagram](assets/images/smart-mood-system-global vision.png)
 
 ## 🚀 A Living Engineering Journey
 
@@ -8,11 +8,11 @@
 
 Smart Mood System is a unique long-term project that combines:
 
-* 📖 A living technical book
-* 🏗️ Real-world software architecture
-* 💻 Full-Stack development
-* 🤖 AI-assisted engineering
-* 🚀 Product creation in public
+- 📖 A living technical book
+- 🏗️ Real-world software architecture
+- 💻 Full-Stack development
+- 🤖 AI-assisted engineering
+- 🚀 Product creation in public
 
 Unlike traditional books, this project does not describe a finished system.
 
@@ -63,45 +63,45 @@ The goal is not only to build software, but to document the entire engineering p
 
 ### 🧠 Product Thinking
 
-* Turning ideas into products
-* Problem validation
-* MVP planning
-* User-centered thinking
-* Product decision making
+- Turning ideas into products
+- Problem validation
+- MVP planning
+- User-centered thinking
+- Product decision making
 
 ### 🏗 Software Architecture
 
-* System design
-* Layered architecture
-* Frontend / Backend separation
-* API design
-* Scalability concepts
-* Best practices
+- System design
+- Layered architecture
+- Frontend / Backend separation
+- API design
+- Scalability concepts
+- Best practices
 
 ### 💻 Engineering Skills
 
-* Full-Stack development
-* REST APIs
-* Database design
-* Testing
-* Deployment
-* Production thinking
+- Full-Stack development
+- REST APIs
+- Database design
+- Testing
+- Deployment
+- Production thinking
 
 ### 📄 Documentation & Git
 
-* Technical writing
-* Markdown
-* Git workflows
-* GitHub Pages
-* Living documentation
-* Building in public
+- Technical writing
+- Markdown
+- Git workflows
+- GitHub Pages
+- Living documentation
+- Building in public
 
 ### 🤖 AI in Practice
 
-* AI-assisted development
-* Prompt engineering
-* AI-powered features
-* Human + AI workflows
+- AI-assisted development
+- Prompt engineering
+- AI-powered features
+- Human + AI workflows
 
 ---
 
@@ -115,12 +115,12 @@ Smart Mood System does both at the same time.
 
 The reader can follow:
 
-* The original idea
-* The thought process
-* Architecture decisions
-* Development progress
-* Mistakes and lessons learned
-* Product evolution
+- The original idea
+- The thought process
+- Architecture decisions
+- Development progress
+- Mistakes and lessons learned
+- Product evolution
 
 As the system grows, the book grows with it.
 
@@ -130,18 +130,18 @@ As the system grows, the book grows with it.
 
 Current and planned technologies include:
 
-* Git
-* GitHub
-* GitHub Pages
-* Jekyll
-* HTML
-* CSS
-* JavaScript
-* React
-* Node.js
-* MongoDB
-* AI Integrations
-* Cloud Infrastructure
+- Git
+- GitHub
+- GitHub Pages
+- Jekyll
+- HTML
+- CSS
+- JavaScript
+- React
+- Node.js
+- MongoDB
+- AI Integrations
+- Cloud Infrastructure
 
 ---
 
@@ -149,27 +149,27 @@ Current and planned technologies include:
 
 ### Completed
 
-* ✅ GitHub repository
-* ✅ GitHub Pages deployment
-* ✅ Book structure established
-* ✅ Responsive documentation website
-* ✅ Initial chapters published
-* ✅ Custom layouts and navigation
+- ✅ GitHub repository
+- ✅ GitHub Pages deployment
+- ✅ Book structure established
+- ✅ Responsive documentation website
+- ✅ Initial chapters published
+- ✅ Custom layouts and navigation
 
 ### In Progress
 
-* 🚧 Expanding the book content
-* 🚧 Architecture chapters
-* 🚧 Product design chapters
-* 🚧 Development implementation
+- 🚧 Expanding the book content
+- 🚧 Architecture chapters
+- 🚧 Product design chapters
+- 🚧 Development implementation
 
 ### Future Goals
 
-* 🎯 Interactive prototype
-* 🎯 Backend services
-* 🎯 AI-powered analysis
-* 🎯 SaaS platform
-* 🎯 Real users and feedback
+- 🎯 Interactive prototype
+- 🎯 Backend services
+- 🎯 AI-powered analysis
+- 🎯 SaaS platform
+- 🎯 Real users and feedback
 
 ---
 
@@ -193,12 +193,12 @@ The project documentation, architecture, and development process are intended to
 
 If you are interested in:
 
-* Product Thinking
-* Software Architecture
-* Full-Stack Development
-* AI Engineering
-* Technical Documentation
-* Building in Public
+- Product Thinking
+- Software Architecture
+- Full-Stack Development
+- AI Engineering
+- Technical Documentation
+- Building in Public
 
 then this project is for you.
 
