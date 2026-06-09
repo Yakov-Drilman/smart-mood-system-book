@@ -3,15 +3,6 @@ layout: home
 title: Smart Mood System
 ---
 
-<nav>
-  <a href="#hero">התחלה</a>
-  <a href="#about">אודות</a>
-  <a href="#vision">חזון</a>
-  <a href="#book">הספר</a>
-  <a href="#project">יומן הפיתוח</a>
-  <a href="{{ site.github.repository_url }}">GitHub</a>
-</nav>
-
 <section class="hero" id="hero">
 
   <h1>Smart Mood System</h1>

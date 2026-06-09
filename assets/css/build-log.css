@@ -28,6 +28,12 @@
   color: white;
 }
 
+.chapter-hero {
+  height: 320px;
+  background-size: cover;
+  background-position: center;
+}
+
 .content {
   margin-right: 260px;
   padding: 60px;
