@@ -1,11 +1,13 @@
-/* פריסה גמישה לכל העמוד */
+/* --- 1. פריסה גמישה (Layout) --- */
 .main-wrapper {
   display: flex;
   min-height: 100vh;
+  width: 100%;
 }
 
-/* התפריט הצדי - דסקטופ */
+/* --- 2. התפריט הצדי (Sidebar) --- */
 .sidebar {
+  display: block;
   width: 260px;
   background: #111827;
   color: white;
@@ -17,24 +19,62 @@
   overflow-y: auto;
 }
 
-/* התוכן הראשי - תופס את כל השטח שנותר */
+.sidebar h2 {
+  color: white;
+  margin-bottom: 20px;
+  font-size: 1.2em;
+}
+
+/* תיקון ללינקים בתפריט - שימוש ב-block וביטול ירושה מ-style.css */
+.sidebar a {
+  display: block !important;
+  color: #cbd5e1 !important;
+  text-decoration: none !important;
+  margin: 10px 0 !important;
+  padding: 5px 0 !important;
+  background: transparent !important;
+  font-weight: normal;
+}
+
+.sidebar a:hover {
+  color: #ffffff !important;
+}
+
+/* תיקון לכותרות בתוך התפריט */
+.sidebar strong {
+  display: block !important;
+  color: #ffffff !important;
+  margin-top: 25px !important;
+  margin-bottom: 5px !important;
+  font-size: 0.95em !important;
+  border-bottom: 1px solid #334155 !important;
+  padding-bottom: 5px !important;
+}
+
+/* --- 3. תוכן ראשי (Main Content) --- */
 .page-content {
   flex-grow: 1;
   width: calc(100% - 260px);
+  overflow-x: hidden;
 }
 
 .content {
   padding: 60px;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
+/* הגדרות באנר משופרות להצגת התמונה במלואה */
 .chapter-hero {
-  height: 320px;
-  background-size: cover;
-  background-position: center;
   width: 100%;
+  aspect-ratio: 2.6 / 1; /* מתאים ליחס של התמונה ששלחת */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #111827; /* רקע כהה להשלמת מראה התמונה */
 }
 
-/* התאמות למובייל */
+/* --- 4. התאמות למובייל (Mobile) --- */
 @media (max-width: 768px) {
   .main-wrapper {
     flex-direction: column;
@@ -45,8 +85,9 @@
     right: -260px;
     height: 100vh;
     z-index: 1000;
-    transition: .3s;
-    top: 60px; /* גובה ההדר במובייל */
+    transition: 0.3s;
+    top: 60px;
+    width: 260px;
   }
 
   .sidebar.open {
@@ -59,6 +100,7 @@
   }
   
   .chapter-hero {
-    height: 220px;
+    /* התאמה למובייל - גובה גמיש יותר */
+    aspect-ratio: 1.8 / 1; 
   }
 }
