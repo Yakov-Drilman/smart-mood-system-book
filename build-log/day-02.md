@@ -1,7 +1,7 @@
 ---
 layout: build-log
 title: Day 2 – Backend Architecture & Full CRUD
-hero_image: /assets/images/chapter-01-hero.png
+hero_image: /assets/images/chapter-02-hero.png
 ---
 
 # Day 2 – Backend Architecture & Full CRUD
