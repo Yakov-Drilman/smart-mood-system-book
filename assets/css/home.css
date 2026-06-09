@@ -1,12 +1,13 @@
-/* --- 1. סגנונות גלובליים (Desktop First) --- */
+/* --- 1. גלובלי (ברירת מחדל לכל המכשירים) --- */
 
-/* הגדרה בסיסית להעלמת רכיבי מובייל בדסקטופ */
+/* העלמת רכיבי המובייל בדסקטופ */
 .mobile-header,
 .home-mobile-menu,
 .backdrop {
   display: none;
 }
 
+/* עיצוב כללי שקיים בדסקטופ */
 .top-nav {
   position: sticky;
   top: 0;
@@ -78,17 +79,14 @@ section {
   object-fit: cover;
 }
 
-
-/* --- 2. מובייל (Media Query) --- */
-
+/* --- 2. מובייל (Media Query - מסכים קטנים מ-768px) --- */
 @media (max-width: 768px) {
-  
-  /* העלמת תפריט דסקטופ */
+  /* הסתרת ניווט הדסקטופ */
   .top-nav nav {
     display: none;
   }
 
-  /* הצגת הדר מובייל */
+  /* הצגת הדר המובייל */
   .mobile-header {
     display: flex;
     justify-content: space-between;
@@ -98,9 +96,9 @@ section {
     border-bottom: 1px solid #e2e8f0;
   }
 
-  /* עיצוב תפריט צד מובייל */
+  /* תפריט מובייל (אנכי ונסתר כברירת מחדל) */
   .home-mobile-menu {
-    display: none; /* ברירת מחדל - סגור */
+    display: none; 
     flex-direction: column;
     position: fixed;
     top: 0;
@@ -113,38 +111,32 @@ section {
     box-shadow: -2px 0 5px rgba(0,0,0,0.1);
   }
 
+  /* מצב פתוח של התפריט */
   .home-mobile-menu.open {
-    display: flex; /* מופיע כשיש קלאס open */
+    display: flex;
   }
 
-  /* עיצוב ה-Backdrop */
+  /* רקע כהה (Backdrop) - נסתר כברירת מחדל */
   .backdrop {
-    display: none; /* ברירת מחדל - סגור */
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0, 0, 0, 0.5);
     z-index: 999;
   }
 
+  /* מצב פתוח של הרקע */
   .backdrop.show {
-    display: block; /* מופיע כשיש קלאס show */
+    display: block;
   }
 
-  /* רספונסיביות לתוכן */
+  /* התאמות נוספות למובייל */
   .hero h1 { display: none; }
   .hero h2 { font-size: 24px; }
   .hero p { font-size: 16px; }
-
-  .about-section {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .profile-image {
-    width: 180px;
-    height: 180px;
-  }
+  .about-section { flex-direction: column; text-align: center; }
+  .profile-image { width: 180px; height: 180px; }
 }
