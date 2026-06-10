@@ -1,7 +1,7 @@
 ---
 layout: journey
 title: הקדמה - נקודת המפנה
-hero_image: /assets/images/chapter-03-hero.png
+hero_image: /assets/images/smart-mood-system-book-hero.png
 ---
 
 # הקדמה

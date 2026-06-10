@@ -44,7 +44,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,.3);
+  background: rgba(0, 0, 0, 0.3);
 }
 
 .hero * {
@@ -56,11 +56,56 @@
 .hero h2,
 .hero p {
   color: white;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  margin-bottom: 40px;
+}
+
+.hero .read-book-btn {
+  color: white;
+  width: fit-content;
+}
+
+.hero .read-book-btn {
+  background-color: #ffffff;
+  border: 1px solid rgb(209, 213, 219);
+  border-radius: 0.5rem;
+  color: #111827;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  padding: 0.75rem 1rem;
+  text-align: center;
+  -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+}
+
+.hero .read-book-btn:hover {
+  background-color: #f9fafb;
+}
+
+.hero .read-book-btn:focus {
+  outline: 2px solid rgba(0, 0, 0, 0.1);
+  outline-offset: 2px;
+}
+
+.hero .read-book-btn:focus-visible {
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
 
 section {
   min-height: 70vh;
-  padding: 100px 20px;
+  padding: 50px;
 }
 
 .about-section {
@@ -82,7 +127,7 @@ section {
 /* --- 2. מובייל (Media Query - מסכים קטנים מ-768px) --- */
 @media (max-width: 768px) {
   /* הסתרת ניווט הדסקטופ */
-  .top-nav nav {
+  .top-nav {
     display: none;
   }
 
@@ -94,11 +139,16 @@ section {
     padding: 15px 20px;
     background: white;
     border-bottom: 1px solid #e2e8f0;
+    color: black;
+  }
+
+  .menu-toggle {
+    color: black;
   }
 
   /* תפריט מובייל (אנכי ונסתר כברירת מחדל) */
   .home-mobile-menu {
-    display: none; 
+    display: none;
     flex-direction: column;
     position: fixed;
     top: 0;
@@ -108,12 +158,18 @@ section {
     background: white;
     z-index: 1000;
     padding: 60px 20px;
-    box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
   }
 
   /* מצב פתוח של התפריט */
   .home-mobile-menu.open {
     display: flex;
+  }
+
+  .home-mobile-menu a {
+    color: black;
+    text-decoration: none;
   }
 
   /* רקע כהה (Backdrop) - נסתר כברירת מחדל */
@@ -134,9 +190,25 @@ section {
   }
 
   /* התאמות נוספות למובייל */
-  .hero h1 { display: none; }
-  .hero h2 { font-size: 24px; }
-  .hero p { font-size: 16px; }
-  .about-section { flex-direction: column; text-align: center; }
-  .profile-image { width: 180px; height: 180px; }
+  .hero h1 {
+    display: none;
+  }
+  .hero h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  .hero p {
+    font-size: 16px;
+  }
+  section {
+    padding: 30px 15px;
+  }
+  .about-section {
+    flex-direction: column;
+    text-align: center;
+  }
+  .profile-image {
+    width: 180px;
+    height: 180px;
+  }
 }

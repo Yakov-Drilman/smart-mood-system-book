@@ -84,7 +84,7 @@ class="read-book-btn"
 
 </section>
 
-<section id="book">
+<section id="journey">
 
   <h1>Engineering Journey</h1>
 
@@ -117,7 +117,7 @@ class="read-book-btn"
 
 </section>
 
-<section id="project">
+<section id="build_log">
 
   <h1>Project Build Log</h1>
 
