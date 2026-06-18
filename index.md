@@ -32,7 +32,7 @@ title: Smart Mood System
         <p>האתר משמש כספר דיגיטלי, כתיעוד ארכיטקטוני וכיומן פיתוח חי.</p>
       </div>
       <div class="about-image">
-        <img class="profile-image" src="assets/images/avatar.jpg" alt="Profile" />
+        <img class="profile-image" src="{{ '/assets/images/avatar.jpg' | relative_url }}" alt="Profile" />
       </div>
 </section>
 
