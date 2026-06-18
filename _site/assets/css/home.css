@@ -237,8 +237,7 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background-image: url("{{ '/assets/images/smart-mood-system-vision.png' | relative_url }}");
-
+  background-image: url("/assets/images/smart-mood-system-vision.png");
   background-size: cover;
   background-position: center;
 }
@@ -279,7 +278,7 @@ body {
 }
 
 .journey-image {
-  background-image: url("{{ '/assets/images/bg-book-sectoin.png' | relative_url }}");
+  background-image: url("/assets/images/bg-book-sectoin.png");
 }
 
 /* =====================================
@@ -291,7 +290,7 @@ body {
 }
 
 .build-image {
-  background-image: url("{{ '/assets/images/bg-diary-section.png' | relative_url }}");
+  background-image: url("/assets/images/bg-diary-section.png");
 }
 
 .feature-list {
