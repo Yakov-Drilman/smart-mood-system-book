@@ -87,7 +87,7 @@ body {
   justify-content: center;
   text-align: center;
   min-height: 100vh;
-  background-image: url("{{ '/assets/images/smart-mood-system-hero.png' | relative_url }}");
+  background-image: url("../images/smart-mood-system-hero.png");
   background-size: cover;
   background-position: center;
   color: white;
