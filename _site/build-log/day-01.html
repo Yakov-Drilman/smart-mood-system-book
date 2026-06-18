@@ -1,0 +1,214 @@
+<!doctype html>
+
+<html lang="he" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="/assets/css/style.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="/assets/css/build-log.css"
+    />
+
+    <title>Day 1 – Backend Setup</title>
+  </head>
+
+  <body class="build-layout">
+    <!-- Mobile Header -->
+    <div class="mobile-header">
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+      <span class="mobile-title">💻 Build Log</span>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+      <h2>💻 Build Log</h2>
+
+      <a href="/build-log/overview.html">
+         Overview
+      </a>
+
+      <strong>Project Days</strong>
+
+      <a href="/build-log/day-01.html">
+        Day 1 — Project Skeleton
+      </a>
+
+      <a href="/build-log/day-02.html">
+        Day 2 — REST API
+      </a>
+
+      <a href="/build-log/day-03.html"> Day 3 — CRUD </a>
+
+      <a href="/build-log/day-04.html">
+        Day 4 — Database
+      </a>
+
+      <a href="/build-log/day-05.html">
+        Day 5 — Authentication
+      </a>
+
+      <hr />
+
+      <a href="/"> 🏠 דף הבית </a>
+
+      <a href="/smart-mood-system-book/journey-book/">
+        📘 Engineering Journey
+      </a>
+    </div>
+
+    <!-- Backdrop -->
+    <div class="backdrop" id="backdrop" onclick="toggleMenu()"></div>
+
+    <!-- Hero -->
+    
+    <div
+      class="chapter-hero"
+      style="background-image: url('/assets/images/chapter-01-hero.png')"
+    ></div>
+    
+
+    <!-- Content -->
+    <div class="content"><h1 id="day-1--backend-setup">Day 1 – Backend Setup</h1>
+
+<h2 id="-backend-foundation">🚀 Backend Foundation</h2>
+
+<p>ביום הראשון בנינו את הבסיס של מערכת Smart Mood System – אפליקציית SaaS לניהול ומעקב אחרי מצב רגשי.</p>
+
+<p>המטרה הייתה להקים backend ראשוני עובד, עם שרת Node.js ו־API ראשון, שמייצר בסיס אמיתי להמשך פיתוח המערכת.</p>
+
+<hr />
+
+<h2 id="-מטרות-היום">🎯 מטרות היום</h2>
+
+<ul>
+  <li>יצירת פרויקט Node.js</li>
+  <li>הקמת שרת Express בסיסי</li>
+  <li>יצירת endpoints ראשונים</li>
+  <li>הרצת שרת מקומי</li>
+  <li>חיבור ראשוני ל-GitHub</li>
+  <li>יצירת Git tag ליום 1</li>
+</ul>
+
+<hr />
+
+<h2 id="️-מה-בנינו-בפועל">🏗️ מה בנינו בפועל</h2>
+
+<h3 id="-מבנה-הפרויקט">📁 מבנה הפרויקט</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>smart-mood-system/
+│
+├── backend/
+│   ├── server.js
+│   ├── package.json
+│
+└── frontend/ (מוכן להמשך)
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="️-שרת-nodejs-express">⚙️ שרת Node.js (Express)</h2>
+
+<p>השרת מאזין לפורט 3001 ומספק API בסיסי.</p>
+
+<h2 id="-endpoints">🌐 Endpoints</h2>
+
+<p>GET /</p>
+
+<p>מחזיר סטטוס שהשרת פעיל:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+  "message": "Smart Mood API is running"
+}
+</code></pre></div></div>
+
+<p>GET /moods</p>
+
+<p>מחזיר נתוני דוגמה של מצבי רוח:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"mood"</span><span class="p">:</span><span class="w"> </span><span class="s2">"happy"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"note"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Good day"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"mood"</span><span class="p">:</span><span class="w"> </span><span class="s2">"stressed"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"note"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Too much work"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div></div>
+
+<hr />
+
+<h2 id="-איך-מריצים-את-הפרויקט">🧪 איך מריצים את הפרויקט</h2>
+
+<p>בתוך תיקיית backend:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">npm</span><span class="w"> </span><span class="err">install</span><span class="w">
+</span><span class="err">npm</span><span class="w"> </span><span class="err">run</span><span class="w"> </span><span class="err">dev</span><span class="w">
+</span></code></pre></div></div>
+
+<p>השרת ירוץ בכתובת:</p>
+
+<p>http://localhost:3001</p>
+
+<hr />
+
+<h2 id="-מה-למדנו-היום">🧠 מה למדנו היום</h2>
+
+<ul>
+  <li>איך מקימים backend מאפס</li>
+  <li>עבודה עם Express</li>
+  <li>יצירת REST API בסיסי</li>
+  <li>בדיקת endpoints בדפדפן</li>
+  <li>חיבור פרויקט ל-GitHub</li>
+  <li>שימוש ב-Git tag כ-snapshot של יום🏷️ Git Snapshot day-01</li>
+</ul>
+
+<h2 id="-קישור-לקוד">🔗 קישור לקוד:</h2>
+
+<p><a href="https://github.com/Yakov-Drilman/smart-mood-system/tree/day-01"><img src="https://img.shields.io/badge/Code-Day_01-blue" alt="Day 1" /></a>
+https://github.com/Yakov-Drilman/smart-mood-system/tree/day-01</p>
+
+<h2 id="-מצב-הפרויקט-בסוף-היום">📌 מצב הפרויקט בסוף היום</h2>
+
+<p>✔ Backend עובד
+✔ API ראשון פעיל
+✔ שרת רץ בהצלחה
+✔ Git repository מחובר
+✔ Tag של יום 1 נוצר</p>
+</div>
+
+    <!-- Floating Home Button -->
+    <a
+      class="floating-home"
+      href="/"
+      aria-label="דף הבית"
+      title="דף הבית"
+    >
+      🏠
+    </a>
+
+    <script>
+      function toggleMenu() {
+        document.getElementById("sidebar").classList.toggle("open");
+        document.getElementById("backdrop").classList.toggle("show");
+      }
+    </script>
+    ```
+  </body>
+</html>

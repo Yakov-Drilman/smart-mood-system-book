@@ -1,5 +1,5 @@
 ---
-layout: build
+layout: build-log
 title: Build Log
 ---
 

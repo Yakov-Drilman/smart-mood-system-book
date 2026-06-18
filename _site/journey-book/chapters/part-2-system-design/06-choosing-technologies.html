@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="/assets/css/style.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/assets/css/journey.css"
+    />
+
+    <title>פרק 6 - בחירת טכנולוגיות (Node / ASP.NET Core)</title>
+  </head>
+
+  <body class="journey-layout">
+    <div class="mobile-header">
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+      <span class="mobile-title">📘 Smart Mood System</span>
+    </div>
+
+    <div class="main-wrapper">
+      <aside class="sidebar" id="sidebar">
+        <h2>📖 תוכן העניינים</h2>
+        <a
+          href="/journey-book/chapters/introduction.html"
+          >הקדמה</a
+        >
+
+        <strong>הרעיון</strong>
+        <a
+          href="/journey-book/chapters/part-1-the-idea/01-how-it-all-started.html"
+          >1. רגע שבו הכל התחיל</a
+        >
+        <a
+          href="/journey-book/chapters/part-1-the-idea/02-the-problem-no-one-solved.html"
+          >2. בעיה שאף אחד לא באמת פתר</a
+        >
+        <a
+          href="/journey-book/chapters/part-1-the-idea/03-turning-a-feeling-into-a-system.html"
+          >3. להפוך תחושה למערכת</a
+        >
+
+        <strong>תכנון מערכת</strong>
+        <a
+          href="/journey-book/chapters/part-2-system-design/04-breaking-the-problem-into-layers.html"
+          >4. פירוק הבעיה לשכבות</a
+        >
+        <a
+          href="/journey-book/chapters/part-2-system-design/05-why-architecture-matters.html"
+          >5. למה צריך ארכיטקטורה</a
+        >
+        <a
+          href="/journey-book/chapters/part-2-system-design/06-choosing-technologies.html"
+          >6. בחירת טכנולוגיות</a
+        >
+        <a
+          href="/journey-book/chapters/part-2-system-design/07-decisions-that-shape-a-system.html"
+          >7. החלטות שמעצבות מערכת</a
+        >
+
+        <strong>Backend</strong>
+        <a
+          href="/journey-book/chapters/part-3-backend/08-the-first-api.html"
+          >8. API</a
+        >
+        <a
+          href="/journey-book/chapters/part-3-backend/09-crud-as-the-core-engine.html"
+          >9. CRUD</a
+        >
+        <a
+          href="/journey-book/chapters/part-3-backend/10-database-integration.html"
+          >10. חיבור למסד נתונים</a
+        >
+        <a
+          href="/journey-book/chapters/part-3-backend/11-users-and-jwt.html"
+          >11. ניהול משתמשים ו-JWT</a
+        >
+         <strong>Frontend</strong>
+
+         <a
+          href="/journey-book/chapters/part-4-backend/12-database-integration.html"
+          >12. React כממשק חכם</a
+        >
+
+         <strong>אינטליגנציה (AI)</strong>
+
+        <hr />
+        <a href="/"> 🏠 דף הבית </a>
+      </aside>
+
+      <main class="page-content">
+        
+        <div
+          class="chapter-hero"
+          style="background-image: url('/assets/images/chapter-06-hero.png')"
+        ></div>
+        
+
+        <div class="content"><h1 id="פרק-6--בחירת-טכנולוגיות-node--aspnet-core">פרק 6 – בחירת טכנולוגיות (Node / ASP.NET Core)</h1>
+
+<p>זה אולי נשמע כמו החלטה טכנית קטנה.<br />
+איזה שפה לבחור.<br />
+איזה פריימוורק.<br />
+איזה סביבה.<br />
+אבל בפועל, זו אחת ההחלטות הכי “לא טכניות” שיש.<br />
+כי אתה לא באמת בוחר טכנולוגיה, אתה בוחר את הקצב שבו המערכת שלך תתפתח.</p>
+
+<hr />
+
+<h2 id="הרגע-שבו-רעיון-פוגש-מציאות">הרגע שבו רעיון פוגש מציאות</h2>
+
+<p>עד עכשיו המערכת הייתה בראש,<br />
+שכבות<br />
+זרימה<br />
+ארכיטקטורה</p>
+
+<p>אבל עכשיו הגיע רגע האמת, צריך לבחור במה כל זה ירוץ.<br />
+זה כבר לא דיאגרמה, זה קוד אמיתי.</p>
+
+<hr />
+
+<h2 id="הדילמה-nodejs-או-aspnet-core">הדילמה, Node.js או ASP.NET Core?</h2>
+
+<p>על השולחן היו שתי גישות,</p>
+
+<p><strong>Node.js</strong> - מהיר לפיתוח, JavaScript לכל מקום (Frontend + Backend) קהילה ענקית, מתאים לפרויקטים דינמיים.<br />
+<strong>ASP.NET Core</strong> - מאוד מובנה, חזק לארגונים, ביצועים גבוהים. ארכיטקטורה “מסודרת” כברירת מחדל.</p>
+
+<hr />
+
+<h2 id="השאלה-האמיתית-לא-הייתה-טכנולוגית">השאלה האמיתית לא הייתה טכנולוגית</h2>
+
+<p>לא שאלתי, מה יותר טוב?<br />
+שאלתי, איזה עולם אני רוצה לבנות?</p>
+
+<hr />
+
+<h2 id="הדרישות-של-smart-mood-system">הדרישות של Smart Mood System</h2>
+
+<p>המערכת לא הייתה מערכת רגילה.<br />
+היא הייתה צריכה:</p>
+
+<p>לטפל בהרבה קלטים קטנים (רגשות).<br />
+להשתנות מהר (פיצ׳רים עתידיים).<br />
+לעבוד עם JSON פשוט בהתחלה.<br />
+להתחבר ל-Frontend בקלות.<br />
+להיות גמישה לניסויים (AI בהמשך).</p>
+
+<hr />
+
+<h2 id="נקודת-ההכרעה">נקודת ההכרעה</h2>
+
+<p>בשלב הזה זה נהיה ברור,</p>
+
+<p>אני לא בונה מערכת ארגונית כבדה. אני בונה מערכת חיה שמתפתחת. ולכן הבחירה נטתה באופן טבעי ל-Node.js.</p>
+
+<hr />
+
+<h2 id="למה-node-ניצח-במקרה-הזה">למה Node ניצח במקרה הזה</h2>
+
+<p>לא בגלל שהוא “טוב יותר”.<br />
+אלא בגלל שהוא מתאים לאופי המערכת,</p>
+
+<ol>
+  <li>
+    <p>אותו שפה בכל המערכת<br />
+Frontend ו-Backend שניהם JavaScript.</p>
+  </li>
+  <li>
+    <p>מהירות שינוי<br />
+אפשר לשנות API מהר בלי תהליך כבד.</p>
+  </li>
+  <li>
+    <p>התאמה ל-JSON<br />
+כל המערכת מבוססת על נתונים פשוטים.</p>
+  </li>
+  <li>
+    <p>התאמה ל-AI בעתיד<br />
+קל לשלב שירותים חיצוניים.</p>
+  </li>
+</ol>
+
+<hr />
+
+<h2 id="אבל-הייתה-גם-החלטה-הפוכה-מודעת">אבל הייתה גם החלטה הפוכה מודעת</h2>
+
+<p>בחרתי לא להשתמש ב-</p>
+
+<p>Microservices<br />
+Kubernetes<br />
+מערכת מורכבת של שירותים</p>
+
+<p>למה?<br />
+כי בשלב הזה זה היה מוקדם מדי.</p>
+
+<p>מערכת טובה לא מתחילה מורכבת היא הופכת מורכבת כשצריך.</p>
+
+<hr />
+
+<h2 id="התוצאה-סטאק-ראשוני-פשוט">התוצאה, סטאק ראשוני פשוט</h2>
+
+<p>המערכת נראתה ככה:</p>
+
+<p>Frontend<br />
+React</p>
+
+<p>Backend<br />
+Node.js + Express</p>
+
+<p>Data<br />
+JSON (בשלב הראשון)</p>
+
+<hr />
+
+<h2 id="רגע-המעבר-מהתכנון-לקוד">רגע המעבר מהתכנון לקוד</h2>
+
+<p>כאן קרה שינוי מנטלי חשוב:</p>
+
+<p>עד עכשיו דיברנו על:<br />
+רעיונות<br />
+שכבות<br />
+זרימה</p>
+
+<p>עכשיו פתאום צריך לכתוב:</p>
+
+<h1 id="applisten3000"><code class="language-plaintext highlighter-rouge">app.listen(3000)</code></h1>
+
+<p>שורה אחת קטנה, אבל עם משמעות גדולה.</p>
+
+<p><code class="language-plaintext highlighter-rouge">app.listen(3000)</code> אומר ל־Node.js להתחיל להאזין לבקשות נכנסות על פורט 3000.</p>
+
+<p>זה הרגע שבו השרת שלך “מתעורר לחיים” ומתחיל לקבל תעבורה אמיתית מהעולם החיצוני.</p>
+
+<p>עד לשורה הזו — יש לך קוד.<br />
+מהשורה הזו — יש לך מערכת רצה.</p>
+
+<p>פורט 3000 הוא פשוט נקודת הכניסה של האפליקציה שלך, דרכה הדפדפן או ה־Frontend יכולים לדבר עם ה־Backend.</p>
+
+<p>זו לא רק פקודה טכנית — זו נקודת המעבר בין תכנון לבין מערכת פעילה.</p>
+
+<p>וזה רגע שקט אבל משמעותי:</p>
+
+<p>כל הארכיטקטורה מתחילה להפוך לשורות קוד.</p>
+
+<hr />
+
+<h2 id="ההבנה-של-הפרק-הזה">ההבנה של הפרק הזה</h2>
+
+<p>טכנולוגיה היא לא בחירה טכנית.<br />
+היא הצהרה על:</p>
+
+<p>כמה מהר אתה רוצה לזוז<br />
+כמה מורכבות אתה מוכן לשאת<br />
+כמה גמישות אתה צריך</p>
+
+<hr />
+
+<h2 id="הטעות-שנמנעה">הטעות שנמנעה</h2>
+
+<p>אם הייתי בוחר ASP.NET Core רק כי הוא “מסודר יותר”, הייתי מקבל:</p>
+
+<p>מערכת איטית לשינויים<br />
+יותר מדי מבנה מוקדם מדי<br />
+פחות מקום לניסוי</p>
+
+<p>אם הייתי בוחר Node בלי ארכיטקטורה — הייתי מקבל כאוס.</p>
+
+<p>אז ההחלטה האמיתית הייתה:</p>
+
+<p>Node + ארכיטקטורה ברורה = איזון</p>
+
+<hr />
+
+<h2 id="סוף-הפרק">סוף הפרק</h2>
+
+<p>בנקודה הזו כבר היה משהו אמיתי:</p>
+
+<p>רעיון<br />
+ארכיטקטורה<br />
+טכנולוגיה</p>
+
+<p>עכשיו נשאר רק דבר אחד:</p>
+
+<p>לבנות את ה-API הראשון.</p>
+</div>
+      </main>
+    </div>
+
+    <div class="backdrop" id="backdrop" onclick="toggleMenu()"></div>
+
+    <a
+      class="floating-home"
+      href="/"
+      aria-label="דף הבית"
+      title="דף הבית"
+      >🏠</a
+    >
+
+    <script>
+      function toggleMenu() {
+        document.getElementById("sidebar").classList.toggle("open");
+        document.getElementById("backdrop").classList.toggle("show");
+      }
+    </script>
+  </body>
+</html>

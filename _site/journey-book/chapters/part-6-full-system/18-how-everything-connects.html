@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="/assets/css/style.css"
+    />
+
+    <title></title>
+  </head>
+
+  <body class="">
+    <div class="mobile-header">
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+      <span class="mobile-title">📘 Smart Mood System</span>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+      <h2>📘 תוכן העניינים</h2>
+
+      <strong>הרעיון</strong>
+      <a
+        href="/smart-mood-system-book/journey-book/chapters/part-1-the-idea/01-how-it-all-started.html"
+        >1. רגע שבו הכל התחיל</a
+      >
+      <a
+        href="/smart-mood-system-book/journey-book/chapters/part-1-the-idea/02-the-problem-no-one-solved.html"
+        >2. בעיה שאף אחד לא באמת פתר</a
+      >
+      <a
+        href="/smart-mood-system-book/journey-book/chapters/part-1-the-idea/03-turning-a-feeling-into-a-system.html"
+        >3. להפוך תחושה למערכת</a
+      >
+
+      <strong>תכנון מערכת</strong>
+      <a
+        href="/smart-mood-system-book/journey-book/chapters/part-2-system-design/04-breaking-the-problem-into-layers.html"
+        >4. פירוק הבעיה לשכבות</a
+      >
+      <a
+        href="/smart-mood-system-book/journey-book/chapters/part-2-system-design/05-why-architecture-matters.html"
+        >5. למה צריך ארכיטקטורה</a
+      >
+      <a
+        href="/smart-mood-system-book/journey-book/chapters/part-2-system-design/06-choosing-technologies.html"
+        >6. בחירת טכנולוגיות</a
+      >
+      <a
+        href="/smart-mood-system-book/journey-book/chapters/part-2-system-design/07-decisions-that-shape-a-system.html"
+        >7. החלטות שמעצבות מערכת</a
+      >
+
+      <strong>Backend</strong>
+      <a
+        href="/smart-mood-system-book/journey-book/chapters/part-3-backend/08-the-first-api.html"
+        >8. API</a
+      >
+      <a
+        href="/smart-mood-system-book/journey-book/chapters/part-3-backend/09-crud-as-the-core-engine.html"
+        >9. CRUD</a
+      >
+      <a
+        href="/smart-mood-system-book/journey-book/chapters/part-3-backend/10-database-integration.html"
+        >10. חיבור למסד נתונים</a
+      >
+      <a
+        href="/smart-mood-system-book/journey-book/chapters/part-3-backend/11-users-and-jwt.html"
+        >11. ניהול משתמשים ו-JWT</a
+      >
+    </div>
+
+    <div class="backdrop" id="backdrop" onclick="toggleMenu()"></div>
+
+    <!-- Hero -->
+    
+
+    <!-- Content -->
+    <div class="content">
+</div>
+
+    <!-- Floating Home Button -->
+    <a
+      class="floating-home"
+      href="/"
+      aria-label="דף הבית"
+      title="דף הבית"
+    >
+      🏠
+    </a>
+
+    <script>
+      function toggleMenu() {
+        document.getElementById("sidebar").classList.toggle("open");
+        document.getElementById("backdrop").classList.toggle("show");
+      }
+    </script>
+  </body>
+</html>

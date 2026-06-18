@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="/assets/css/style.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/assets/css/journey.css"
+    />
+
+    <title>פרק 1 - רגע שבו הכל התחיל</title>
+  </head>
+
+  <body class="journey-layout">
+    <div class="mobile-header">
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+      <span class="mobile-title">📘 Smart Mood System</span>
+    </div>
+
+    <div class="main-wrapper">
+      <aside class="sidebar" id="sidebar">
+        <h2>📖 תוכן העניינים</h2>
+        <a
+          href="/journey-book/chapters/introduction.html"
+          >הקדמה</a
+        >
+
+        <strong>הרעיון</strong>
+        <a
+          href="/journey-book/chapters/part-1-the-idea/01-how-it-all-started.html"
+          >1. רגע שבו הכל התחיל</a
+        >
+        <a
+          href="/journey-book/chapters/part-1-the-idea/02-the-problem-no-one-solved.html"
+          >2. בעיה שאף אחד לא באמת פתר</a
+        >
+        <a
+          href="/journey-book/chapters/part-1-the-idea/03-turning-a-feeling-into-a-system.html"
+          >3. להפוך תחושה למערכת</a
+        >
+
+        <strong>תכנון מערכת</strong>
+        <a
+          href="/journey-book/chapters/part-2-system-design/04-breaking-the-problem-into-layers.html"
+          >4. פירוק הבעיה לשכבות</a
+        >
+        <a
+          href="/journey-book/chapters/part-2-system-design/05-why-architecture-matters.html"
+          >5. למה צריך ארכיטקטורה</a
+        >
+        <a
+          href="/journey-book/chapters/part-2-system-design/06-choosing-technologies.html"
+          >6. בחירת טכנולוגיות</a
+        >
+        <a
+          href="/journey-book/chapters/part-2-system-design/07-decisions-that-shape-a-system.html"
+          >7. החלטות שמעצבות מערכת</a
+        >
+
+        <strong>Backend</strong>
+        <a
+          href="/journey-book/chapters/part-3-backend/08-the-first-api.html"
+          >8. API</a
+        >
+        <a
+          href="/journey-book/chapters/part-3-backend/09-crud-as-the-core-engine.html"
+          >9. CRUD</a
+        >
+        <a
+          href="/journey-book/chapters/part-3-backend/10-database-integration.html"
+          >10. חיבור למסד נתונים</a
+        >
+        <a
+          href="/journey-book/chapters/part-3-backend/11-users-and-jwt.html"
+          >11. ניהול משתמשים ו-JWT</a
+        >
+         <strong>Frontend</strong>
+
+         <a
+          href="/journey-book/chapters/part-4-backend/12-database-integration.html"
+          >12. React כממשק חכם</a
+        >
+
+         <strong>אינטליגנציה (AI)</strong>
+
+        <hr />
+        <a href="/"> 🏠 דף הבית </a>
+      </aside>
+
+      <main class="page-content">
+        
+        <div
+          class="chapter-hero"
+          style="background-image: url('/assets/images/chapter-01-hero.png')"
+        ></div>
+        
+
+        <div class="content"><h1 id="פרק-1--רגע-שבו-הכל-התחיל">פרק 1 – רגע שבו הכל התחיל</h1>
+
+<p>יש רגעים בפיתוח שאתה לא כותב בהם קוד, אתה כותב בהם החלטה.<br />
+לא החלטה טכנית.<br />
+אלא החלטה שמתחילה כמו רעש קטן בראש, כזה שלא עובר גם אחרי שאתה סוגר את הלפטופ.</p>
+
+<p>זה התחיל ממקום מאוד פשוט, שאלה שלא הצלחתי להפסיק לחשוב עליה:<br />
+למה בעידן של AI חכם, רגשות אנושיים עדיין נשארים “שטח מת”?</p>
+
+<p>יש אפליקציות ליומנים. יש צ׳אטבוטים. יש מערכות בריאות. יש AI.<br />
+אבל הכל מרגיש מפוזר. אין מערכת אחת שמצליחה לעשות דבר אחד פשוט:<br />
+לקחת מצב רגשי של בן אדם ולהפוך אותו למשהו שמערכת באמת יכולה לעבוד איתו.</p>
+
+<hr />
+
+<h2 id="הנקודה-ששינתה-את-החשיבה">הנקודה ששינתה את החשיבה</h2>
+
+<p>באיזשהו שלב הבנתי משהו חד:<br />
+מערכות מחשב טובות יודעות לעבוד עם מספרים, טבלאות, סטטוס ברור, לוגיקה.<br />
+אבל בני אדם לא עובדים ככה.</p>
+
+<p>בני אדם עובדים עם בלבול, סתירות פנימיות, רגשות משתנים, חוסר עקביות.</p>
+
+<p>ופה נוצר הפער.</p>
+
+<p>ואז עלתה מחשבה טכנית מאוד פשוטה:<br />
+מה אם נבנה מערכת שמתרגמת רגש למבנה נתונים?</p>
+
+<hr />
+
+<h2 id="כאן-זה-כבר-הפך-לרעיון-הנדסי">כאן זה כבר הפך לרעיון הנדסי</h2>
+
+<p>ברגע שהשאלה השתנתה, הכל השתנה.</p>
+
+<p>זה כבר לא היה:<br />
+“איך לעזור לאנשים להרגיש טוב יותר?”</p>
+
+<p>אלא:</p>
+
+<ul>
+  <li>איך מגדירים רגש כ-schema?</li>
+  <li>איך שומרים אותו במסד נתונים?</li>
+  <li>איך עושים ממנו API?</li>
+  <li>איך מציגים אותו ב-UI?</li>
+  <li>ואיך בסוף מפיקים ממנו תובנות?</li>
+</ul>
+
+<p>פתאום “רגש” הפך להיות אובייקט במערכת:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"mood"</span><span class="p">:</span><span class="w"> </span><span class="s2">"anxiety"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"intensity"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"notes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"לא ישנתי טוב"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-05-28"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>זה הרגע שבו זה הפסיק להיות רעיון פילוסופי והפך לפרויקט.</p>
+
+<hr />
+
+<h2 id="השינוי-האמיתי">השינוי האמיתי</h2>
+
+<p>בשלב הזה קרה משהו מעניין:<br />
+כבר לא חשבתי כמו “אדם עם רעיון”.<br />
+התחלתי לחשוב כמו מערכת.</p>
+
+<p>Input → Processing → Storage → Output<br />
+תובנות → שמירה → עיבוד → רגש</p>
+
+<p>וזה בדיוק המקום שבו נולדה <strong>Smart Mood System</strong>.<br />
+לא כאפליקציה — אלא כבעיה הנדסית פתוחה.</p>
+
+<p>בנקודה הזו עדיין לא היה:<br />
+לא React, לא Node, לא DB, לא ארכיטקטורה.</p>
+
+<p>היה רק דבר אחד:<br />
+רעיון שמסרב להישאר בראש.</p>
+
+<hr />
+
+<p>בפיתוח, זה בדרך כלל הסימן הכי מסוכן:<br />
+או שאתה שוכח אותו, או שאתה בונה מערכת שלמה סביבו.</p>
+</div>
+      </main>
+    </div>
+
+    <div class="backdrop" id="backdrop" onclick="toggleMenu()"></div>
+
+    <a
+      class="floating-home"
+      href="/"
+      aria-label="דף הבית"
+      title="דף הבית"
+      >🏠</a
+    >
+
+    <script>
+      function toggleMenu() {
+        document.getElementById("sidebar").classList.toggle("open");
+        document.getElementById("backdrop").classList.toggle("show");
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="/assets/css/style.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/assets/css/journey.css"
+    />
+
+    <title>פרק 8 - ה-API הראשון</title>
+  </head>
+
+  <body class="journey-layout">
+    <div class="mobile-header">
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+      <span class="mobile-title">📘 Smart Mood System</span>
+    </div>
+
+    <div class="main-wrapper">
+      <aside class="sidebar" id="sidebar">
+        <h2>📖 תוכן העניינים</h2>
+        <a
+          href="/journey-book/chapters/introduction.html"
+          >הקדמה</a
+        >
+
+        <strong>הרעיון</strong>
+        <a
+          href="/journey-book/chapters/part-1-the-idea/01-how-it-all-started.html"
+          >1. רגע שבו הכל התחיל</a
+        >
+        <a
+          href="/journey-book/chapters/part-1-the-idea/02-the-problem-no-one-solved.html"
+          >2. בעיה שאף אחד לא באמת פתר</a
+        >
+        <a
+          href="/journey-book/chapters/part-1-the-idea/03-turning-a-feeling-into-a-system.html"
+          >3. להפוך תחושה למערכת</a
+        >
+
+        <strong>תכנון מערכת</strong>
+        <a
+          href="/journey-book/chapters/part-2-system-design/04-breaking-the-problem-into-layers.html"
+          >4. פירוק הבעיה לשכבות</a
+        >
+        <a
+          href="/journey-book/chapters/part-2-system-design/05-why-architecture-matters.html"
+          >5. למה צריך ארכיטקטורה</a
+        >
+        <a
+          href="/journey-book/chapters/part-2-system-design/06-choosing-technologies.html"
+          >6. בחירת טכנולוגיות</a
+        >
+        <a
+          href="/journey-book/chapters/part-2-system-design/07-decisions-that-shape-a-system.html"
+          >7. החלטות שמעצבות מערכת</a
+        >
+
+        <strong>Backend</strong>
+        <a
+          href="/journey-book/chapters/part-3-backend/08-the-first-api.html"
+          >8. API</a
+        >
+        <a
+          href="/journey-book/chapters/part-3-backend/09-crud-as-the-core-engine.html"
+          >9. CRUD</a
+        >
+        <a
+          href="/journey-book/chapters/part-3-backend/10-database-integration.html"
+          >10. חיבור למסד נתונים</a
+        >
+        <a
+          href="/journey-book/chapters/part-3-backend/11-users-and-jwt.html"
+          >11. ניהול משתמשים ו-JWT</a
+        >
+         <strong>Frontend</strong>
+
+         <a
+          href="/journey-book/chapters/part-4-backend/12-database-integration.html"
+          >12. React כממשק חכם</a
+        >
+
+         <strong>אינטליגנציה (AI)</strong>
+
+        <hr />
+        <a href="/"> 🏠 דף הבית </a>
+      </aside>
+
+      <main class="page-content">
+        
+        <div
+          class="chapter-hero"
+          style="background-image: url('/assets/images/chapter-08-hero.png')"
+        ></div>
+        
+
+        <div class="content"><p>פרק 8: ה־API הראשון</p>
+
+<p>יש רגע בפרויקט שבו כל הדיאגרמות, ההחלטות והארכיטקטורה סוף סוף נבחנים במבחן אחד פשוט:</p>
+
+<p>האם המערכת שלך באמת יודעת לקבל בקשה אמיתית?</p>
+
+<p>לא רעיון.
+לא תכנון.
+בקשה חיה שמגיעה מהעולם.</p>
+
+<p>וזה הרגע שבו בניתי את ה־API הראשון של Smart Mood System.</p>
+
+<p>🧠 מה בעצם בודקים כאן?</p>
+
+<p>ה־API הראשון לא היה “עוד פיצ’ר”.</p>
+
+<p>הוא היה מבחן בסיסי:</p>
+
+<p>האם אני יודע לקבל רגש מהמשתמש?
+האם אני יודע לשמור אותו?
+והאם אני יודע להחזיר תשובה עקבית?</p>
+
+<p>אם זה עובד — יש מערכת.
+אם לא — יש רק קוד.</p>
+
+<p>⚙️ הבחירה הראשונה: endpoint אחד פשוט</p>
+
+<p>במקום להתחיל מורכב, החלטתי על דבר אחד:</p>
+
+<p>Endpoint אחד שמכניס רגש למערכת.</p>
+
+<p>POST /api/emotions</p>
+
+<p>זהו.</p>
+
+<p>אין עוד מסכים.
+אין עוד מורכבות.</p>
+
+<p>רק נקודת כניסה אחת.</p>
+
+<p>🧱 שלב 1: ה־Route
+const express = require(“express”);
+const router = express.Router();
+const emotionsController = require(“../controllers/emotionsController”);</p>
+
+<p>router.post(“/”, emotionsController.createEmotion);</p>
+
+<p>module.exports = router;</p>
+
+<p>כבר כאן יש החלטה חשובה:</p>
+
+<p>ה־Route לא יודע כלום על לוגיקה.</p>
+
+<p>הוא רק מעביר הלאה.</p>
+
+<p>🧠 שלב 2: ה־Controller
+const emotionsService = require(“../services/emotionsService”);</p>
+
+<p>exports.createEmotion = async (req, res) =&gt; {
+  try {
+    const emotion = await emotionsService.createEmotion(req.body);
+    res.status(201).json(emotion);
+  } catch (error) {
+    res.status(500).json({ message: “Error saving emotion” });
+  }
+};</p>
+
+<p>ופה קורה משהו חשוב:</p>
+
+<p>ה־Controller לא מנתח רגשות
+הוא לא מחליט כלום
+הוא רק מתווך
+⚙️ שלב 3: ה־Service (הלב של המערכת)
+const fs = require(“fs”);
+const path = require(“path”);</p>
+
+<p>const filePath = path.join(__dirname, “../data/emotions.json”);</p>
+
+<p>exports.createEmotion = async (data) =&gt; {
+  const emotions = JSON.parse(fs.readFileSync(filePath, “utf-8”));</p>
+
+<p>const newEmotion = {
+    id: Date.now().toString(),
+    userId: data.userId,
+    type: data.type,
+    intensity: data.intensity,
+    context: data.context,
+    note: data.note,
+    createdAt: new Date().toISOString()
+  };</p>
+
+<p>emotions.push(newEmotion);</p>
+
+<p>fs.writeFileSync(filePath, JSON.stringify(emotions, null, 2));</p>
+
+<p>return newEmotion;
+};</p>
+
+<p>ופה קורה הדבר האמיתי:</p>
+
+<p>רגש הופך לנתון במערכת.</p>
+
+<p>🧪 הרגע שבו זה הפך ל”אמיתי”</p>
+
+<p>ברגע הראשון שה־API עבד, משהו השתנה:</p>
+
+<p>לא היה יותר “רעיון”.</p>
+
+<p>היה:</p>
+
+<p>בקשה שנכנסת
+נתון שנשמר
+תשובה שחוזרת</p>
+
+<p>וזה כל מה שמערכת עושה.</p>
+
+<p>🧠 ההבנה הקריטית של הפרק</p>
+
+<p>מערכת לא נמדדת בכמה היא חכמה.</p>
+
+<p>אלא בכמה היא עקבית.</p>
+
+<p>וזה מה שה־API הראשון הוכיח:</p>
+
+<p>אפשר להפוך רגש למבנה נתונים יציב.</p>
+
+<p>⚠️ ומה עדיין חסר?</p>
+
+<p>כמובן, זה עדיין רחוק ממערכת שלמה:</p>
+
+<p>אין ולידציה
+אין אבטחה
+אין משתמשים אמיתיים
+אין DB אמיתי</p>
+
+<p>אבל זה לא משנה.</p>
+
+<p>כי עכשיו יש בסיס.</p>
+
+<p>🔥 שינוי החשיבה</p>
+
+<p>בשלב הזה כבר לא חשבתי:</p>
+
+<p>“איך בונים API”</p>
+
+<p>אלא:</p>
+
+<p>“איך כל פיצ’ר עתידי ייכנס לתוך המבנה הזה בלי לשבור אותו”</p>
+
+<p>וזה ההבדל בין דמו למערכת.</p>
+
+<p>🎯 סוף הפרק</p>
+
+<p>בשלב הזה Smart Mood System כבר עשה משהו משמעותי:</p>
+
+<p>הוא לא רק רעיון — הוא מערכת שמקבלת נתונים אמיתיים.</p>
+
+<p>אבל זה רק הצעד הראשון.</p>
+
+<p>בפרק הבא נתחיל לבנות את המנוע האמיתי של המערכת:</p>
+</div>
+      </main>
+    </div>
+
+    <div class="backdrop" id="backdrop" onclick="toggleMenu()"></div>
+
+    <a
+      class="floating-home"
+      href="/"
+      aria-label="דף הבית"
+      title="דף הבית"
+      >🏠</a
+    >
+
+    <script>
+      function toggleMenu() {
+        document.getElementById("sidebar").classList.toggle("open");
+        document.getElementById("backdrop").classList.toggle("show");
+      }
+    </script>
+  </body>
+</html>

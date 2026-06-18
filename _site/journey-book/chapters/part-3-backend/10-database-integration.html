@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="/assets/css/style.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/assets/css/journey.css"
+    />
+
+    <title>פרק 10 - חיבור למסד נתונים</title>
+  </head>
+
+  <body class="journey-layout">
+    <div class="mobile-header">
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+      <span class="mobile-title">📘 Smart Mood System</span>
+    </div>
+
+    <div class="main-wrapper">
+      <aside class="sidebar" id="sidebar">
+        <h2>📖 תוכן העניינים</h2>
+        <a
+          href="/journey-book/chapters/introduction.html"
+          >הקדמה</a
+        >
+
+        <strong>הרעיון</strong>
+        <a
+          href="/journey-book/chapters/part-1-the-idea/01-how-it-all-started.html"
+          >1. רגע שבו הכל התחיל</a
+        >
+        <a
+          href="/journey-book/chapters/part-1-the-idea/02-the-problem-no-one-solved.html"
+          >2. בעיה שאף אחד לא באמת פתר</a
+        >
+        <a
+          href="/journey-book/chapters/part-1-the-idea/03-turning-a-feeling-into-a-system.html"
+          >3. להפוך תחושה למערכת</a
+        >
+
+        <strong>תכנון מערכת</strong>
+        <a
+          href="/journey-book/chapters/part-2-system-design/04-breaking-the-problem-into-layers.html"
+          >4. פירוק הבעיה לשכבות</a
+        >
+        <a
+          href="/journey-book/chapters/part-2-system-design/05-why-architecture-matters.html"
+          >5. למה צריך ארכיטקטורה</a
+        >
+        <a
+          href="/journey-book/chapters/part-2-system-design/06-choosing-technologies.html"
+          >6. בחירת טכנולוגיות</a
+        >
+        <a
+          href="/journey-book/chapters/part-2-system-design/07-decisions-that-shape-a-system.html"
+          >7. החלטות שמעצבות מערכת</a
+        >
+
+        <strong>Backend</strong>
+        <a
+          href="/journey-book/chapters/part-3-backend/08-the-first-api.html"
+          >8. API</a
+        >
+        <a
+          href="/journey-book/chapters/part-3-backend/09-crud-as-the-core-engine.html"
+          >9. CRUD</a
+        >
+        <a
+          href="/journey-book/chapters/part-3-backend/10-database-integration.html"
+          >10. חיבור למסד נתונים</a
+        >
+        <a
+          href="/journey-book/chapters/part-3-backend/11-users-and-jwt.html"
+          >11. ניהול משתמשים ו-JWT</a
+        >
+         <strong>Frontend</strong>
+
+         <a
+          href="/journey-book/chapters/part-4-backend/12-database-integration.html"
+          >12. React כממשק חכם</a
+        >
+
+         <strong>אינטליגנציה (AI)</strong>
+
+        <hr />
+        <a href="/"> 🏠 דף הבית </a>
+      </aside>
+
+      <main class="page-content">
+        
+        <div
+          class="chapter-hero"
+          style="background-image: url('/assets/images/chapter-11-hero.png')"
+        ></div>
+        
+
+        <div class="content"><p>פרק 10: חיבור למסד נתונים</p>
+
+<p>יש רגע בפרויקט שבו אתה מפסיק “לשחק עם נתונים”
+ומתחיל לנהל אותם באמת.</p>
+
+<p>עד עכשיו הכל היה פשוט:</p>
+
+<p>קובץ JSON
+קריאה/כתיבה ישירה לדיסק
+שליטה מלאה, כמעט נאיבית</p>
+
+<p>זה עובד.
+אבל זה עובד כמו אב טיפוס.</p>
+
+<p>ואז מגיעה ההבנה:</p>
+
+<p>מערכת אמיתית לא יכולה להסתמך על קובץ.</p>
+
+<p>🧠 הבעיה שלא ראית עד עכשיו</p>
+
+<p>ברגע שמתחילים לחשוב קצת קדימה, הקובץ מתחיל להראות בעייתי:</p>
+
+<p>אין concurrency אמיתי
+כל כתיבה דורסת את הקובץ
+אין סקייל
+אין שאילתות חכמות
+אין אינדקסים</p>
+
+<p>ובעיקר:</p>
+
+<p>אי אפשר לגדול ככה.</p>
+
+<p>⚙️ נקודת המפנה</p>
+
+<p>בשלב הזה כבר לא שאלתי:</p>
+
+<p>“איך אני שומר רגשות?”</p>
+
+<p>אלא:</p>
+
+<p>“איך אני שומר מערכת של רגשות לאורך זמן?”</p>
+
+<p>וזה הבדל עצום.</p>
+
+<p>🧱 הבחירה: מעבר ל־MongoDB</p>
+
+<p>בחרתי במסד נתונים NoSQL, לא במקרה.</p>
+
+<p>כי המערכת שלי הייתה:</p>
+
+<p>דינמית
+מבוססת אובייקטים
+משתנה כל הזמן
+בלי סכימה קשיחה מדי</p>
+
+<p>MongoDB התאים בדיוק לאופי הזה.</p>
+
+<p>🧠 שינוי החשיבה: מקובץ למסד נתונים</p>
+
+<p>עד עכשיו:</p>
+
+<p>fs.readFile → modify → fs.writeFile</p>
+
+<p>מעכשיו:</p>
+
+<p>Client → DB Query → Persisted Data</p>
+
+<p>וזה כבר עולם אחר.</p>
+
+<p>⚙️ שלב 1: חיבור בסיסי
+const mongoose = require(“mongoose”);</p>
+
+<p>mongoose.connect(“mongodb://localhost:27017/smartmood”, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});</p>
+
+<p>ופה קורה משהו קטן אבל חשוב:</p>
+
+<p>המערכת מפסיקה להיות “קבצים” ומתחילה להיות “שירות”.</p>
+
+<p>🧩 שלב 2: מודל רגש</p>
+
+<p>במקום JSON ידני, מגדירים Schema:</p>
+
+<p>const mongoose = require(“mongoose”);</p>
+
+<p>const emotionSchema = new mongoose.Schema({
+  userId: String,
+  type: String,
+  intensity: Number,
+  context: String,
+  note: String,
+  createdAt: {
+    type: Date,
+    default: Date.now
+  }
+});</p>
+
+<p>module.exports = mongoose.model(“Emotion”, emotionSchema);</p>
+
+<p>וזה רגע חשוב:</p>
+
+<p>עכשיו יש למערכת “חוקי מציאות”.</p>
+
+<p>🧠 מה השתנה באמת?</p>
+
+<p>לפני כן:</p>
+
+<p>הנתונים היו “קבצים”
+האחריות הייתה על הקוד</p>
+
+<p>עכשיו:</p>
+
+<p>הנתונים חיים בתוך מסד נתונים
+יש שכבת אבטחה פנימית
+יש עקביות
+יש מבנה
+⚙️ שלב 3: שינוי ה־Service
+const Emotion = require(“../models/Emotion”);</p>
+
+<p>exports.createEmotion = async (data) =&gt; {
+  const emotion = new Emotion(data);
+  return await emotion.save();
+};</p>
+
+<p>exports.getAllEmotions = async () =&gt; {
+  return await Emotion.find();
+};</p>
+
+<p>exports.updateEmotion = async (id, updates) =&gt; {
+  return await Emotion.findByIdAndUpdate(id, updates, { new: true });
+};</p>
+
+<p>exports.deleteEmotion = async (id) =&gt; {
+  return await Emotion.findByIdAndDelete(id);
+};</p>
+
+<p>ופה קורה משהו עמוק:</p>
+
+<p>הקוד נהיה קצר יותר — אבל חזק יותר.</p>
+
+<p>🔥 שינוי פרדיגמה</p>
+
+<p>זה אחד הרגעים הכי חשובים במערכת:</p>
+
+<p>פחות קוד
+יותר יכולת
+פחות שליטה ידנית
+יותר אחריות למערכת
+🧠 ההבנה הקריטית של הפרק</p>
+
+<p>מסד נתונים הוא לא “אחסון”.</p>
+
+<p>הוא:</p>
+
+<p>הזיכרון הקבוע של המערכת שלך.</p>
+
+<p>וברגע שאתה מחבר אותו — אתה קובע איך המערכת תזכור את המשתמשים שלה.</p>
+
+<p>⚠️ הטעות שנמנעה</p>
+
+<p>אם הייתי נשאר עם JSON הייתי מקבל:</p>
+
+<p>באגים של דריסת מידע
+חוסר עקביות
+בעיות ביצועים
+מערכת שלא מתרחבת
+🎯 סוף הפרק</p>
+
+<p>בשלב הזה Smart Mood System כבר לא “פרויקט קוד”.</p>
+
+<p>הוא מערכת עם:</p>
+
+<p>API אמיתי
+CRUD מלא
+מסד נתונים
+שכבות הפרדה</p>
+
+<p>אבל עדיין חסר משהו קריטי:</p>
+
+<p>משתמשים אמיתיים והזדהות.</p>
+</div>
+      </main>
+    </div>
+
+    <div class="backdrop" id="backdrop" onclick="toggleMenu()"></div>
+
+    <a
+      class="floating-home"
+      href="/"
+      aria-label="דף הבית"
+      title="דף הבית"
+      >🏠</a
+    >
+
+    <script>
+      function toggleMenu() {
+        document.getElementById("sidebar").classList.toggle("open");
+        document.getElementById("backdrop").classList.toggle("show");
+      }
+    </script>
+  </body>
+</html>

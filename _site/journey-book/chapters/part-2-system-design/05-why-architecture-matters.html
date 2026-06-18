@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="/assets/css/style.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/assets/css/journey.css"
+    />
+
+    <title>פרק 5 - למה צריך ארכיטקטורה</title>
+  </head>
+
+  <body class="journey-layout">
+    <div class="mobile-header">
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+      <span class="mobile-title">📘 Smart Mood System</span>
+    </div>
+
+    <div class="main-wrapper">
+      <aside class="sidebar" id="sidebar">
+        <h2>📖 תוכן העניינים</h2>
+        <a
+          href="/journey-book/chapters/introduction.html"
+          >הקדמה</a
+        >
+
+        <strong>הרעיון</strong>
+        <a
+          href="/journey-book/chapters/part-1-the-idea/01-how-it-all-started.html"
+          >1. רגע שבו הכל התחיל</a
+        >
+        <a
+          href="/journey-book/chapters/part-1-the-idea/02-the-problem-no-one-solved.html"
+          >2. בעיה שאף אחד לא באמת פתר</a
+        >
+        <a
+          href="/journey-book/chapters/part-1-the-idea/03-turning-a-feeling-into-a-system.html"
+          >3. להפוך תחושה למערכת</a
+        >
+
+        <strong>תכנון מערכת</strong>
+        <a
+          href="/journey-book/chapters/part-2-system-design/04-breaking-the-problem-into-layers.html"
+          >4. פירוק הבעיה לשכבות</a
+        >
+        <a
+          href="/journey-book/chapters/part-2-system-design/05-why-architecture-matters.html"
+          >5. למה צריך ארכיטקטורה</a
+        >
+        <a
+          href="/journey-book/chapters/part-2-system-design/06-choosing-technologies.html"
+          >6. בחירת טכנולוגיות</a
+        >
+        <a
+          href="/journey-book/chapters/part-2-system-design/07-decisions-that-shape-a-system.html"
+          >7. החלטות שמעצבות מערכת</a
+        >
+
+        <strong>Backend</strong>
+        <a
+          href="/journey-book/chapters/part-3-backend/08-the-first-api.html"
+          >8. API</a
+        >
+        <a
+          href="/journey-book/chapters/part-3-backend/09-crud-as-the-core-engine.html"
+          >9. CRUD</a
+        >
+        <a
+          href="/journey-book/chapters/part-3-backend/10-database-integration.html"
+          >10. חיבור למסד נתונים</a
+        >
+        <a
+          href="/journey-book/chapters/part-3-backend/11-users-and-jwt.html"
+          >11. ניהול משתמשים ו-JWT</a
+        >
+         <strong>Frontend</strong>
+
+         <a
+          href="/journey-book/chapters/part-4-backend/12-database-integration.html"
+          >12. React כממשק חכם</a
+        >
+
+         <strong>אינטליגנציה (AI)</strong>
+
+        <hr />
+        <a href="/"> 🏠 דף הבית </a>
+      </aside>
+
+      <main class="page-content">
+        
+        <div
+          class="chapter-hero"
+          style="background-image: url('/assets/images/chapter-05-hero.png')"
+        ></div>
+        
+
+        <div class="content"><h1 id="פרק-5--למה-צריך-ארכיטקטורה">פרק 5 – למה צריך ארכיטקטורה</h1>
+
+<p>עכשיו, כבר לא היה לי ספק מה אני בונה.<br />
+לא אפליקציה קטנה. לא דמו. לא “פרויקט צד”. אלא מערכת.<br />
+וכשאתה מבין שאתה בונה מערכת מגיע רגע שאתה לא יכול לברוח ממנו יותר.<br />
+השאלה “איך לכתוב קוד”? הופכת לשאלה “איך למנוע מהקוד להתפרק בעוד חודשיים”?</p>
+
+<hr />
+
+<h2 id="השינוי-השקט-שקורה-לכל-מפתח">השינוי השקט שקורה לכל מפתח</h2>
+
+<p>בהתחלה אתה חושב על פיצ׳רים,<br />
+להוסיף טופס, לשמור נתון, להציג גרף.<br />
+אבל בשלב מסוים אתה מתחיל לחשוב אחרת,<br />
+מה יקרה כשיהיו 10,000 משתמשים?<br />
+מה יקרה כשנוסיף AI?<br />
+מה יקרה כשנרצה לשנות את מבנה הרגש?</p>
+
+<p>ופה בדיוק נכנסת הארכיטקטורה.</p>
+
+<hr />
+
+<h2 id="ארכיטקטורה-היא-לא-טכנולוגיה">ארכיטקטורה היא לא טכנולוגיה</h2>
+
+<p>זו טעות נפוצה לחשוב שארכיטקטורה זה:<br />
+Node.js<br />
+React<br />
+MongoDB<br />
+AWS</p>
+
+<p>אבל בפועל, ארכיטקטורה היא הדרך שבה חלקי המערכת מדברים אחד עם השני בלי להסתבך.</p>
+
+<hr />
+
+<h2 id="הבעיה-שלי-בלי-ארכיטקטורה">הבעיה שלי בלי ארכיטקטורה</h2>
+
+<p>בהתחלה, בלי לשים לב, המערכת הייתה מתחילה להיראות ככה,<br />
+React קורא API.<br />
+API עושה גם לוגיקה.<br />
+לוגיקה מתערבבת עם שמירה.<br />
+שמירה מושפעת מ-UI decisions.</p>
+
+<p>זה נראה “בסדר” בהתחלה. עד שזה נשבר.</p>
+
+<hr />
+
+<h2 id="סימן-ראשון-שמשהו-לא-נכון">סימן ראשון שמשהו לא נכון</h2>
+
+<p>הסימן הראשון היה פשוט,<br />
+כל שינוי קטן שבר משהו אחר.</p>
+
+<p>שינית מבנה רגש → נשבר API.<br />
+שינית API → נשבר UI.<br />
+שינית UI → נשבר data flow.</p>
+
+<p>זה הרגע שבו אתה מבין, אין בעיה בקוד, יש בעיה במבנה.</p>
+
+<hr />
+
+<h2 id="ההחלטה-לבנות-גבולות-ברורים">ההחלטה, לבנות גבולות ברורים</h2>
+
+<p>בשלב הזה הגדרתי כלל אחד,<br />
+כל חלק במערכת חייב לדעת רק מה שהוא צריך לדעת ולא יותר.</p>
+
+<p>זה התחיל להיראות כמו חלוקה אמיתית,</p>
+
+<p>UI Layer (React) רק מציג ומעביר פעולות.<br />
+API Layer (Node.js) רק מקבל, מאמת, ומעביר הלאה.<br />
+Service Layer כאן נמצאת הלוגיקה האמיתית.<br />
+Data Layer רק שמירה ושליפה.</p>
+
+<hr />
+
+<h2 id="הארכיטקטורה-החדשה-בפועל">הארכיטקטורה החדשה (בפועל)</h2>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[ React UI ]
+     ↓
+[ API Routes ]
+     ↓
+[ Service Layer ]
+     ↓
+[ Data Access Layer ]
+     ↓
+[ Database / JSON ]
+</code></pre></div></div>
+
+<p>וזה שינוי קריטי.<br />
+כי פתאום, כל חלק יודע מה התפקיד שלו, אין “קפיצות” בין שכבות, אין תלות מיותרת</p>
+
+<hr />
+
+<h2 id="ההבנה-החשובה-ביותר">ההבנה החשובה ביותר</h2>
+
+<p>ארכיטקטורה לא נועדה לעשות את החיים קלים יותר בהתחלה.<br />
+היא נועדה לעשות דבר אחד, למנוע מהמערכת להתמוטט כשהיא גדלה.</p>
+
+<hr />
+
+<h2 id="הפיתוי-המסוכן">הפיתוי המסוכן</h2>
+
+<p>היה רגע שבו שקלתי לוותר על זה.<br />
+כי האמת פשוטה, יותר מהר לבנות בלי שכבות.</p>
+
+<p>אבל יש מחיר נסתר,<br />
+קוד מהיר = חוב טכני<br />
+חוב טכני = כאב עתידי<br />
+כאב עתידי = מערכת שלא שורדת</p>
+
+<hr />
+
+<h2 id="ההחלטה-ששינתה-את-כל-הפרויקט">ההחלטה ששינתה את כל הפרויקט</h2>
+
+<p>בשלב הזה קיבלתי החלטה סופית,<br />
+אני לא בונה “פיצ׳רים”, אני בונה מערכת שאפשר להרחיב בלי פחד.</p>
+
+<p>וזה אומר,<br />
+לא מערבבים לוגיקה עם UI.<br />
+לא מערבבים DB עם API.<br />
+לא “מאלתרים פתרונות זמניים” בלי לחשוב קדימה.</p>
+
+<hr />
+
+<h2 id="שינוי-החשיבה">שינוי החשיבה</h2>
+
+<p>כאן משהו בראש השתנה,<br />
+לא שאלתי יותר, “איך אני מוסיף פיצ׳ר?”<br />
+אלא, “באיזו שכבה הפיצ׳ר הזה חי?”</p>
+
+<p>וזה בדיוק ההבדל בין מפתח רגיל לארכיטקט.</p>
+
+<p>בנקודה הזו כבר לא היה ספק, השלד של המערכת קיים.<br />
+אבל עדיין אין קוד אמיתי שמחבר את הכל.</p>
+</div>
+      </main>
+    </div>
+
+    <div class="backdrop" id="backdrop" onclick="toggleMenu()"></div>
+
+    <a
+      class="floating-home"
+      href="/"
+      aria-label="דף הבית"
+      title="דף הבית"
+      >🏠</a
+    >
+
+    <script>
+      function toggleMenu() {
+        document.getElementById("sidebar").classList.toggle("open");
+        document.getElementById("backdrop").classList.toggle("show");
+      }
+    </script>
+  </body>
+</html>

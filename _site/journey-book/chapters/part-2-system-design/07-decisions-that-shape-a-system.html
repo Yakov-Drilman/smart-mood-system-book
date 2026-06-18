@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="/assets/css/style.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/assets/css/journey.css"
+    />
+
+    <title>פרק 7 - החלטות שמעצבות מערכת</title>
+  </head>
+
+  <body class="journey-layout">
+    <div class="mobile-header">
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+      <span class="mobile-title">📘 Smart Mood System</span>
+    </div>
+
+    <div class="main-wrapper">
+      <aside class="sidebar" id="sidebar">
+        <h2>📖 תוכן העניינים</h2>
+        <a
+          href="/journey-book/chapters/introduction.html"
+          >הקדמה</a
+        >
+
+        <strong>הרעיון</strong>
+        <a
+          href="/journey-book/chapters/part-1-the-idea/01-how-it-all-started.html"
+          >1. רגע שבו הכל התחיל</a
+        >
+        <a
+          href="/journey-book/chapters/part-1-the-idea/02-the-problem-no-one-solved.html"
+          >2. בעיה שאף אחד לא באמת פתר</a
+        >
+        <a
+          href="/journey-book/chapters/part-1-the-idea/03-turning-a-feeling-into-a-system.html"
+          >3. להפוך תחושה למערכת</a
+        >
+
+        <strong>תכנון מערכת</strong>
+        <a
+          href="/journey-book/chapters/part-2-system-design/04-breaking-the-problem-into-layers.html"
+          >4. פירוק הבעיה לשכבות</a
+        >
+        <a
+          href="/journey-book/chapters/part-2-system-design/05-why-architecture-matters.html"
+          >5. למה צריך ארכיטקטורה</a
+        >
+        <a
+          href="/journey-book/chapters/part-2-system-design/06-choosing-technologies.html"
+          >6. בחירת טכנולוגיות</a
+        >
+        <a
+          href="/journey-book/chapters/part-2-system-design/07-decisions-that-shape-a-system.html"
+          >7. החלטות שמעצבות מערכת</a
+        >
+
+        <strong>Backend</strong>
+        <a
+          href="/journey-book/chapters/part-3-backend/08-the-first-api.html"
+          >8. API</a
+        >
+        <a
+          href="/journey-book/chapters/part-3-backend/09-crud-as-the-core-engine.html"
+          >9. CRUD</a
+        >
+        <a
+          href="/journey-book/chapters/part-3-backend/10-database-integration.html"
+          >10. חיבור למסד נתונים</a
+        >
+        <a
+          href="/journey-book/chapters/part-3-backend/11-users-and-jwt.html"
+          >11. ניהול משתמשים ו-JWT</a
+        >
+         <strong>Frontend</strong>
+
+         <a
+          href="/journey-book/chapters/part-4-backend/12-database-integration.html"
+          >12. React כממשק חכם</a
+        >
+
+         <strong>אינטליגנציה (AI)</strong>
+
+        <hr />
+        <a href="/"> 🏠 דף הבית </a>
+      </aside>
+
+      <main class="page-content">
+        
+        <div
+          class="chapter-hero"
+          style="background-image: url('/assets/images/chapter-07-hero.png')"
+        ></div>
+        
+
+        <div class="content"><h1 id="פרק-7--החלטות-שמעצבות-מערכת">פרק 7 – החלטות שמעצבות מערכת</h1>
+
+<p>יש רגע בפרויקט שבו אתה מבין משהו לא נוח, המערכת שלך לא נקבעת לפי הטכנולוגיה שבחרת אלא לפי ההחלטות הקטנות שאתה עושה כל יום.</p>
+
+<p>לא ההחלטות הגדולות. לא הארכיטקטורה.</p>
+
+<p>אלא הדברים ה”קטנים” שאתה כמעט לא שם לב אליהם.</p>
+
+<p>וכאן בדיוק מתחיל הכאוס… או הסדר.</p>
+
+<hr />
+
+<h2 id="ההבנה-ששינתה-את-הכל">ההבנה ששינתה את הכל</h2>
+
+<p>אחרי שבחרתי Node.js, חשבתי שהחלק הקשה מאחוריי.</p>
+
+<p>אבל מהר מאוד גיליתי, הטכנולוגיה היא רק המסגרת, ההחלטות הן מה שממלא אותה.</p>
+
+<p>וזה המקום שבו מערכות מתחילות להישבר או להצליח.</p>
+
+<hr />
+
+<h2 id="החלטה-1">החלטה 1</h2>
+
+<h3 id="איך-נראה-api">איך נראה API?</h3>
+
+<p>אפשר לבנות API בכמה דרכים,</p>
+
+<p>גישה מבולגנת (מהירה אבל מסוכנת), כל endpoint עושה הכל, אין אחידות, כל מפתח כותב אחרת.</p>
+
+<p>גישה מסודרת (יותר איטית, אבל יציבה), מבנה עקבי, הפרדה בין routes, controllers, services, כל דבר במקום שלו.</p>
+
+<p>בחרתי בגישה השנייה.</p>
+
+<p>לא כי היא יפה יותר, אלא, כי מערכת שמדברת עם רגשות חייבת להיות יציבה יותר מהרגשות עצמם.</p>
+
+<hr />
+
+<h2 id="מבנה-הפרויקט">מבנה הפרויקט</h2>
+
+<p>כבר בשלב הזה התחלתי לבנות שלד אמיתי,</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>server/
+ ├── routes/
+ │    └── emotions.js
+ ├── controllers/
+ │    └── emotionsController.js
+ ├── services/
+ │    └── emotionsService.js
+ ├── data/
+ │    └── emotions.json
+ └── app.js
+</code></pre></div></div>
+
+<p>זה שינוי חשוב. כי פתאום, קוד כבר לא “זורם”, הוא מחולק לפי אחריות.</p>
+
+<hr />
+
+<h2 id="החלטה-2">החלטה 2</h2>
+
+<h3 id="איפה-הלוגיקה-חיה">איפה הלוגיקה חיה?</h3>
+
+<p>כאן מגיע אחד המקומות הכי קריטיים במערכת, איפה באמת קורה ה”קסם”?</p>
+
+<p>אפשר לשים לוגיקה בכל אחת מהתיקיות, Controller, Route, או Service.</p>
+
+<p>בחרתי, הלוגיקה נכנסת ל-Service בלבד.</p>
+
+<p>למה?</p>
+
+<p>כי Controller צריך להיות טיפש.</p>
+
+<p>כן, טיפש בכוונה.</p>
+
+<p>הוא רק מקבל בקשה, מעביר הלאה, מחזיר תשובה.</p>
+
+<hr />
+
+<h2 id="החלטה-3">החלטה 3</h2>
+
+<h3 id="איך-נראה-emotion">איך נראה Emotion?</h3>
+
+<p>זה אולי נשמע קטן, אבל זה לב המערכת.</p>
+
+<p>האם רגש הוא טקסט חופשי? מספר? אובייקט מובנה?</p>
+
+<p>בחרתי באובייקט מובנה.</p>
+
+<p>למשל,</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"e1001"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"u1"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"stress"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"intensity"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"context"</span><span class="p">:</span><span class="w"> </span><span class="s2">"work"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"note"</span><span class="p">:</span><span class="w"> </span><span class="s2">"יום עמוס מאוד"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-05-28T10:00:00Z"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>וזה קריטי. כי מהרגע הזה, אפשר לנתח, אפשר להשוות, אפשר לבנות מגמות.</p>
+
+<p>בשלב הזה הבנתי משהו חד,</p>
+
+<p>אם המודל שלך לא נכון כל המערכת תהיה לא נכונה. לא משנה כמה הקוד יפה.</p>
+
+<hr />
+
+<h2 id="הטעות-שהייתה-יכולה-לקרות">הטעות שהייתה יכולה לקרות</h2>
+
+<p>הייתי יכול ליפול לאחת הטעויות הנפוצות,</p>
+
+<p>לשים לוגיקה בתוך ה-Frontend.</p>
+
+<p>לשמור נתונים בלי מבנה אחיד.</p>
+
+<p>לערבב Controllers עם Services.</p>
+
+<p>כך בדיוק מערכות הופכות לבלתי ניתנות לתחזוקה.</p>
+
+<hr />
+
+<h2 id="שינוי-החשיבה">שינוי החשיבה</h2>
+
+<p>כאן קרה משהו מנטלי חשוב, אני כבר לא חושב על “איך לבנות פיצ׳ר”.</p>
+
+<p>אני חושב על איפה הוא חי במערכת, מי אחראי עליו ואיך הוא משפיע על שאר המערכת</p>
+
+<p>בנקודה הזו כבר לא היה מדובר בפרויקט קטן.</p>
+
+<p>יש לנו מבנה, חוקים, החלטות עקביות ושלד מערכת אמיתי.</p>
+
+<p>אבל עדיין חסר דבר אחד, קוד חי שמקבל בקשות אמיתיות.</p>
+
+</div>
+      </main>
+    </div>
+
+    <div class="backdrop" id="backdrop" onclick="toggleMenu()"></div>
+
+    <a
+      class="floating-home"
+      href="/"
+      aria-label="דף הבית"
+      title="דף הבית"
+      >🏠</a
+    >
+
+    <script>
+      function toggleMenu() {
+        document.getElementById("sidebar").classList.toggle("open");
+        document.getElementById("backdrop").classList.toggle("show");
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="/assets/css/style.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/assets/css/journey.css"
+    />
+
+    <title>פרק 4 - פירוק המערכת</title>
+  </head>
+
+  <body class="journey-layout">
+    <div class="mobile-header">
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+      <span class="mobile-title">📘 Smart Mood System</span>
+    </div>
+
+    <div class="main-wrapper">
+      <aside class="sidebar" id="sidebar">
+        <h2>📖 תוכן העניינים</h2>
+        <a
+          href="/journey-book/chapters/introduction.html"
+          >הקדמה</a
+        >
+
+        <strong>הרעיון</strong>
+        <a
+          href="/journey-book/chapters/part-1-the-idea/01-how-it-all-started.html"
+          >1. רגע שבו הכל התחיל</a
+        >
+        <a
+          href="/journey-book/chapters/part-1-the-idea/02-the-problem-no-one-solved.html"
+          >2. בעיה שאף אחד לא באמת פתר</a
+        >
+        <a
+          href="/journey-book/chapters/part-1-the-idea/03-turning-a-feeling-into-a-system.html"
+          >3. להפוך תחושה למערכת</a
+        >
+
+        <strong>תכנון מערכת</strong>
+        <a
+          href="/journey-book/chapters/part-2-system-design/04-breaking-the-problem-into-layers.html"
+          >4. פירוק הבעיה לשכבות</a
+        >
+        <a
+          href="/journey-book/chapters/part-2-system-design/05-why-architecture-matters.html"
+          >5. למה צריך ארכיטקטורה</a
+        >
+        <a
+          href="/journey-book/chapters/part-2-system-design/06-choosing-technologies.html"
+          >6. בחירת טכנולוגיות</a
+        >
+        <a
+          href="/journey-book/chapters/part-2-system-design/07-decisions-that-shape-a-system.html"
+          >7. החלטות שמעצבות מערכת</a
+        >
+
+        <strong>Backend</strong>
+        <a
+          href="/journey-book/chapters/part-3-backend/08-the-first-api.html"
+          >8. API</a
+        >
+        <a
+          href="/journey-book/chapters/part-3-backend/09-crud-as-the-core-engine.html"
+          >9. CRUD</a
+        >
+        <a
+          href="/journey-book/chapters/part-3-backend/10-database-integration.html"
+          >10. חיבור למסד נתונים</a
+        >
+        <a
+          href="/journey-book/chapters/part-3-backend/11-users-and-jwt.html"
+          >11. ניהול משתמשים ו-JWT</a
+        >
+         <strong>Frontend</strong>
+
+         <a
+          href="/journey-book/chapters/part-4-backend/12-database-integration.html"
+          >12. React כממשק חכם</a
+        >
+
+         <strong>אינטליגנציה (AI)</strong>
+
+        <hr />
+        <a href="/"> 🏠 דף הבית </a>
+      </aside>
+
+      <main class="page-content">
+        
+        <div
+          class="chapter-hero"
+          style="background-image: url('/assets/images/chapter-04-hero.png')"
+        ></div>
+        
+
+        <div class="content"><h1 id="פרק-4--פירוק-המערכת">פרק 4 – פירוק המערכת</h1>
+
+<p>בשלב הזה כבר לא היה מדובר ברעיון.</p>
+
+<p>היה לי משהו שנראה כמו מערכת אבל עדיין לא היה מערכת באמת.</p>
+
+<p>וזה בדיוק המקום שבו מפתחים נופלים בדרך כלל, הם מתחילים לכתוב קוד לפני שהם מבינים איך לפרק את הבעיה.</p>
+
+<p>אז עצרתי.</p>
+
+<p>וחזרתי לשאלה הכי בסיסית, מה הדבר הקטן ביותר במערכת הזו שאי אפשר לפרק יותר?</p>
+
+<hr />
+
+<h2 id="החשיבה-השתנתה-שוב">החשיבה השתנתה שוב</h2>
+
+<p>במקום לחשוב:</p>
+
+<blockquote>
+  <p>“איך בונים אפליקציית רגשות?”</p>
+</blockquote>
+
+<p>עברתי לחשוב:</p>
+
+<blockquote>
+  <p>“איך מפרקים מערכת שמבינה בני אדם לחלקים הנדסיים?”</p>
+</blockquote>
+
+<p>וזה הבדל עצום.</p>
+
+<p>כי ברגע שאתה מפרק “רגש” אתה חייב להפוך אותו למשהו מכני.</p>
+
+<hr />
+
+<h2 id="שכבת-הפירוק-הראשונה">שכבת הפירוק הראשונה</h2>
+
+<p>מה באמת קורה כשמשתמש כותב רגש?</p>
+
+<p>ניקח פעולה פשוטה:</p>
+
+<blockquote>
+  <p>“אני לחוץ היום בעבודה”</p>
+</blockquote>
+
+<p>זה נראה פשוט.</p>
+
+<p>אבל מאחורי הקלעים קורה רצף של דברים:</p>
+
+<h3 id="קלט-גולמי-raw-input">קלט גולמי (Raw Input)</h3>
+
+<p>טקסט חופשי, לא מובנה.</p>
+
+<h3 id="עיבוד-ראשוני-parsing">עיבוד ראשוני (Parsing)</h3>
+
+<p>הבנה שזה לא רק טקסט אלא מצב רגשי.</p>
+
+<h3 id="מיפוי-לרגש-emotion-mapping">מיפוי לרגש (Emotion Mapping)</h3>
+
+<p>זיהוי לחץ, הקשר, עבודה, עוצמה משוערת.</p>
+
+<h3 id="אחסון-storage">אחסון (Storage)</h3>
+
+<p>שמירה כאובייקט במערכת.</p>
+
+<h3 id="שימוש-עתידי-future-usage">שימוש עתידי (Future Usage)</h3>
+
+<p>חלק ממגמה ולא אירוע בודד.</p>
+
+<hr />
+
+<h2 id="כאן-נולד-הרעיון-של-pipeline-רגשי">כאן נולד הרעיון של “Pipeline רגשי”</h2>
+
+<p>במקום מערכת אחת בניתי זרימה:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input → Normalize → Detect → Store → Analyze → Visualize
+</code></pre></div></div>
+
+<p>וזה רגע חשוב.</p>
+
+<p>כי מערכת טובה לא “עושה דברים”.</p>
+
+<p>היא מעבירה מידע דרך שלבים.</p>
+
+<hr />
+
+<h2 id="פירוק-ארכיטקטוני-אמיתי">פירוק ארכיטקטוני אמיתי</h2>
+
+<p>עכשיו כבר אפשר היה לראות את זה בצורה הנדסית.</p>
+
+<h3 id="frontend-react">Frontend (React)</h3>
+
+<ul>
+  <li>הכנסת רגשות</li>
+  <li>תצוגה של היסטוריה</li>
+  <li>גרפים</li>
+</ul>
+
+<h3 id="backend-nodejs--api">Backend (Node.js / API)</h3>
+
+<ul>
+  <li>קבלת נתונים</li>
+  <li>ולידציה</li>
+  <li>שמירה</li>
+</ul>
+
+<h3 id="data-layer">Data Layer</h3>
+
+<ul>
+  <li>JSON (בהתחלה)</li>
+  <li>או MongoDB (בהמשך)</li>
+</ul>
+
+<h3 id="logic-layer-בעתיד">Logic Layer (בעתיד)</h3>
+
+<ul>
+  <li>ניתוח מגמות</li>
+  <li>זיהוי דפוסים</li>
+</ul>
+
+<hr />
+
+<h2 id="ההחלטה-החשובה-לא-לערבב-שכבות">ההחלטה החשובה: לא לערבב שכבות</h2>
+
+<p>כאן עשיתי החלטה שמפתחים רבים מדלגים עליה.</p>
+
+<p>כל שכבה עושה דבר אחד בלבד.</p>
+
+<p>לדוגמה:</p>
+
+<ul>
+  <li>ה-Frontend לא מנתח רגשות</li>
+  <li>ה-Backend לא מציג UI</li>
+  <li>ה-DB לא “חושב”</li>
+</ul>
+
+<p>כל דבר נשאר במקום שלו.</p>
+
+<h2 id="רגע-שבו-הכל-מתחיל-להתיישר">רגע שבו הכל מתחיל להתיישר</h2>
+
+<p>ברגע שפירקתי את המערכת כך, משהו השתנה.</p>
+
+<p>פתאום זה לא היה “פרויקט רגשות”.</p>
+
+<p>זה היה נראה כמו מערכת אמיתית.</p>
+
+<p>יש זרימה.</p>
+
+<p>יש אחריות לכל חלק.</p>
+
+<p>יש גבולות ברורים.</p>
+
+<p>וזה בדיוק מה שמבדיל בין רעיון לפרויקט.</p>
+
+<hr />
+
+<h2 id="ההבנה-הקריטית-של-הפרק">ההבנה הקריטית של הפרק</h2>
+
+<p>הבנתי משהו חשוב מאוד.</p>
+
+<p>מערכת לא נמדדת במה שהיא יודעת לעשות אלא במה שהיא לא מערבבת.</p>
+
+<p>זה קריטי במיוחד כשמדובר ברגש.</p>
+
+<p>כי רגש הוא כאוס.</p>
+
+<p>ומערכת טובה היא הדרך להפוך כאוס למבנה.</p>
+
+<hr />
+
+<h2 id="הטעות-שנמנעה-ברגע-האחרון">הטעות שנמנעה ברגע האחרון</h2>
+
+<p>אם לא הייתי מפרק את המערכת, הייתי נופל לאחת הבעיות הבאות:</p>
+
+<ul>
+  <li>קוד מבולגן בלי שכבות</li>
+  <li>לוגיקה מפוזרת ב-Frontend</li>
+  <li>API שמכיל גם UI logic</li>
+  <li>מערכת שאי אפשר להרחיב</li>
+  <li>בקיצור, מערכת שאי אפשר לתחזק</li>
+</ul>
+
+<p>בשלב הזה כבר היה לי משהו ברור.</p>
+
+<p>לא רק רעיון.</p>
+
+<p>לא רק ארכיטקטורה על נייר.</p>
+
+<p>אלא תוכנית עבודה אמיתית.</p>
+</div>
+      </main>
+    </div>
+
+    <div class="backdrop" id="backdrop" onclick="toggleMenu()"></div>
+
+    <a
+      class="floating-home"
+      href="/"
+      aria-label="דף הבית"
+      title="דף הבית"
+      >🏠</a
+    >
+
+    <script>
+      function toggleMenu() {
+        document.getElementById("sidebar").classList.toggle("open");
+        document.getElementById("backdrop").classList.toggle("show");
+      }
+    </script>
+  </body>
+</html>

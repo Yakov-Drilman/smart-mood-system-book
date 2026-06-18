@@ -1,0 +1,102 @@
+<!doctype html>
+
+<html lang="he" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="/assets/css/style.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="/assets/css/build-log.css"
+    />
+
+    <title>Build Log</title>
+  </head>
+
+  <body class="build-layout">
+    <!-- Mobile Header -->
+    <div class="mobile-header">
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+      <span class="mobile-title">💻 Build Log</span>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+      <h2>💻 Build Log</h2>
+
+      <a href="/build-log/overview.html">
+         Overview
+      </a>
+
+      <strong>Project Days</strong>
+
+      <a href="/build-log/day-01.html">
+        Day 1 — Project Skeleton
+      </a>
+
+      <a href="/build-log/day-02.html">
+        Day 2 — REST API
+      </a>
+
+      <a href="/build-log/day-03.html"> Day 3 — CRUD </a>
+
+      <a href="/build-log/day-04.html">
+        Day 4 — Database
+      </a>
+
+      <a href="/build-log/day-05.html">
+        Day 5 — Authentication
+      </a>
+
+      <hr />
+
+      <a href="/"> 🏠 דף הבית </a>
+
+      <a href="/smart-mood-system-book/journey-book/">
+        📘 Engineering Journey
+      </a>
+    </div>
+
+    <!-- Backdrop -->
+    <div class="backdrop" id="backdrop" onclick="toggleMenu()"></div>
+
+    <!-- Hero -->
+    
+
+    <!-- Content -->
+    <div class="content"><h1 id="יומן-הפיתוח">יומן הפיתוח</h1>
+
+<p>כאן מתועד כל שלב בבניית המערכת…</p>
+</div>
+
+    <!-- Floating Home Button -->
+    <a
+      class="floating-home"
+      href="/"
+      aria-label="דף הבית"
+      title="דף הבית"
+    >
+      🏠
+    </a>
+
+    <script>
+      function toggleMenu() {
+        document.getElementById("sidebar").classList.toggle("open");
+        document.getElementById("backdrop").classList.toggle("show");
+      }
+    </script>
+    ```
+  </body>
+</html>
